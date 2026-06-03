@@ -1,0 +1,10 @@
+[build]
+  publish = "."
+  command = "node build.js"
+
+# Serve the homepage at the root and 301 the .html version to clean URL
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true

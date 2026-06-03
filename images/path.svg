@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="An open path forward — the journey to recovery">
+  <defs><linearGradient id="p" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f2d4a"/><stop offset="1" stop-color="#1a5fa8"/></linearGradient></defs>
+  <rect width="1200" height="420" fill="url(#p)"/>
+  <path d="M520 420 Q600 200 600 80 Q600 200 680 420 Z" fill="#e6f0fb" opacity="0.18"/>
+  <circle cx="600" cy="90" r="46" fill="#f0a030" opacity="0.9"/>
+</svg>

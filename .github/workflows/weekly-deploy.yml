@@ -1,0 +1,21 @@
+name: Weekly Netlify Rebuild
+
+# Triggers a fresh Netlify build once a week (Mondays 13:00 UTC) and on push.
+# Set the repository secret NETLIFY_BUILD_HOOK to your Netlify build hook URL
+# (Netlify: Site settings > Build & deploy > Build hooks > Add build hook).
+on:
+  schedule:
+    - cron: '0 13 * * MON'
+  workflow_dispatch:
+
+jobs:
+  trigger-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify build hook
+        run: |
+          if [ -z "${{ secrets.NETLIFY_BUILD_HOOK }}" ]; then
+            echo "NETLIFY_BUILD_HOOK secret is not set — skipping."; exit 0
+          fi
+          curl -fsS -X POST -d '{}' "${{ secrets.NETLIFY_BUILD_HOOK }}"
+          echo "Triggered Netlify rebuild."
