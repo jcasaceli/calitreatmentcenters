@@ -15,7 +15,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ORIGIN = 'https://www.californiatreatmentcenters.com';
+const ORIGIN = 'https://californiatreatmentcenters.com';
 const BRAND = 'California Treatment Centers';
 const PHONE = '213-321-6518';
 const TEL = '2133216518';
