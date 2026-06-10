@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="Luxury drug and alcohol rehab locations across California">
+  <defs><linearGradient id="c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f5d4e"/><stop offset="1" stop-color="#eef1ea"/></linearGradient></defs>
+  <rect width="1200" height="420" fill="url(#c)"/>
+  <path d="M0 252 Q200 214 420 252 T840 252 T1200 252 V420 H0 Z" fill="#14302a" opacity=".25"/>
+  <path d="M0 300 Q300 270 600 300 T1200 300 V420 H0 Z" fill="#0f221d" opacity=".5"/>
+  <path d="M600 118 c-42 0 -74 32 -74 74 c0 55 74 116 74 116 s74 -61 74 -116 c0 -42 -32 -74 -74 -74 z" fill="#cca967"/>
+  <circle cx="600" cy="190" r="25" fill="#14302a"/>
+</svg>

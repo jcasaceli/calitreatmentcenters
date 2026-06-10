@@ -179,25 +179,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f2d4a;
-  --blue: #1a5fa8;
-  --blue-dark: #134880;
-  --sky: #e6f0fb;
-  --gold: #c07c18;
-  --gold-light: #f0a030;
+  /* California Treatment Centers — LUXURY palette: deep emerald + champagne gold + ivory */
+  --navy: #14302a;        /* deep emerald (nav, footer, headings) */
+  --blue: #3f6f60;        /* muted sage accent (links, labels) */
+  --blue-dark: #0f221d;
+  --sky: #eef1ea;         /* soft ivory-sage */
+  --gold: #b0914e;        /* champagne / brushed gold (primary accent) */
+  --gold-light: #cca967;  /* lighter gold (hover, logo accent) */
   --white: #fff;
-  --gray: #f4f6f9;
-  --text: #1a2433;
-  --muted: #536070;
-  --border: #d8e2ee;
-  --green: #156b3a;
-  --red-bar: #6b1010;
+  --gray: #f4f0e6;        /* warm ivory section bg */
+  --text: #20211c;        /* near-black warm */
+  --muted: #6f6a5c;
+  --border: #e7e0d0;      /* ivory border */
+  --green: #1d6b4f;
+  --red-bar: #4f2a1a;     /* understated crisis bar */
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.65; font-size: 16px; }
+body { font-family: 'Helvetica Neue', 'Inter', system-ui, -apple-system, Arial, sans-serif; color: var(--text); line-height: 1.72; font-size: 16px; background: #faf8f1; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ── CA LUXURY THEME: refined serif, champagne gold, generous whitespace ── */
+h1, h2, h3, .logo { font-family: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif; }
+h1 { font-weight: 600; letter-spacing: -.3px; line-height: 1.1; }
+h2 { color: var(--navy); font-weight: 600; }
+.section-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: .68rem; }
+/* elegant gold underline under the eyebrow label */
+.section-label::after { content: ""; display: block; width: 38px; height: 2px; background: var(--gold); margin-top: .6rem; opacity: .8; }
+/* refined rectangular gold CTAs (not bubbly) */
+.btn-primary, .submit-btn, .mobile-cta { background: var(--gold) !important; color: #20211c !important; border-radius: 4px !important; letter-spacing: 1.2px; text-transform: uppercase; font-size: .82rem !important; font-weight: 700; box-shadow: 0 6px 20px rgba(176,145,78,.25); }
+.btn-primary:hover, .submit-btn:hover { background: var(--gold-light) !important; }
+.nav-cta { background: transparent !important; color: var(--gold-light) !important; border: 1px solid var(--gold-light); border-radius: 4px !important; letter-spacing: .6px; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.card { border-radius: 8px; border: 1px solid var(--border); background: #fff; box-shadow: 0 2px 14px rgba(20,48,42,.05); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,48,42,.12); border-color: var(--gold-light); }
+.dropdown, .hero-card { border-radius: 10px; }
+.hero-card { border-top: 3px solid var(--gold); }
+nav { background: var(--navy); box-shadow: 0 1px 0 rgba(204,169,103,.25); }
+.logo span { color: var(--gold-light); }
+.logo { letter-spacing: .3px; }
+section { padding: 100px 0; }            /* generous luxury whitespace */
+.hero { background: linear-gradient(165deg, #faf8f1 0%, #eef1ea 100%); }
+.faq-bg { background: var(--gray); }
+.verify-section { border-top: 1px solid var(--border); }
+/* thin gold rule above the footer for a finished, premium edge */
+footer { border-top: 3px solid var(--gold); }
 
 /* ── CRISIS BAR ── */
 .crisis-bar { background: var(--red-bar); color: var(--white); text-align: center; padding: .55rem 5%; font-size: .84rem; font-weight: 600; }
@@ -669,7 +696,7 @@ p, li, h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
   <a href="mailto:support@alumniaidservices.com">&#9993; support@alumniaidservices.com</a>
   <a href="tel:2133216518" class="mobile-cta">&#128222; 213-321-6518</a>
 </div>
-<section><div class="container"><div class="section-label">Guide</div><h1>Family Guide: Helping a Loved One</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/hero-recovery.svg" alt="Calm, supportive drug and alcohol rehab setting in California — California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
+<section><div class="container"><div class="section-label">Guide</div><h1>Family Guide: Helping a Loved One</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/california-rehab-near-you.svg" alt="Family Guide: Helping a Loved One | California Treatment Centers" title="Family Guide: Helping a Loved One" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
 <p>Watching someone you love struggle with addiction is one of the hardest experiences a family can face. You may feel frightened, exhausted, angry, and hopeful all at once. Please know that your feelings are valid, and you are not alone. This guide offers compassionate, general education to help you support your loved one and care for yourself. It is not medical advice, but it can help you take meaningful next steps.</p><h2>Remember That Addiction Is an Illness</h2><p>Addiction is a medical condition, not a choice or a sign of weak character. Understanding this can ease some of the blame, both toward your loved one and toward yourself. People do recover, and families play a powerful role in that journey. Your support matters more than you may realize.</p><h2>Learn to Recognize the Signs</h2><p>You may already sense that something is wrong. Common signs include secrecy, mood swings, withdrawing from family, neglecting responsibilities, financial trouble, and changes in sleep or appearance. Trust your instincts, and gently keep the door open to honest conversation.</p><h2>Communicate With Care</h2><p>How you talk matters. A few approaches that tend to help:</p><ul><li>Choose a calm, private moment when your loved one is sober</li><li>Use "I" statements, such as "I feel worried," rather than accusations</li><li>Express love and concern, not judgment or ultimatums delivered in anger</li><li>Listen more than you lecture, and avoid arguing during conflict</li></ul><h2>Set Boundaries Without Enabling</h2><p>Supporting someone is not the same as protecting them from every consequence. Enabling, such as covering debts, making excuses, or hiding the problem, can unintentionally allow the addiction to continue. Healthy boundaries protect you while still showing love. You can say no to harmful behavior and yes to your loved one as a person.</p><div class="card-grid-4"><div><h3>Educate</h3><p>Learn about addiction so you can respond with understanding.</p></div><div><h3>Communicate</h3><p>Speak with empathy, and listen without judgment.</p></div><div><h3>Set Boundaries</h3><p>Protect yourself while avoiding enabling behaviors.</p></div><div><h3>Care for You</h3><p>Your own well-being matters and helps you help them.</p></div></div><h2>Take Care of Yourself</h2><p>You cannot pour from an empty cup. Support groups like Al-Anon and Nar-Anon connect you with families who understand. Counseling for yourself, rest, and time with supportive friends are not selfish; they help you stay steady for the long road of recovery. Your health matters too.</p><h2>Encourage Treatment</h2><p>You cannot force lasting recovery, but you can encourage and help arrange professional care. Depending on your loved one's needs, this might include supervised <a href="/medical-detox">medical detox</a>, structured <a href="/residential-treatment">residential treatment</a>, or <a href="/dual-diagnosis-treatment">dual diagnosis treatment</a> when mental health conditions are also present. Offering to help make a call or attend an assessment can lower the barrier to that first step.</p><h2>A Note on Privacy</h2><p>Federal protections, including HIPAA and 42 CFR Part 2, give strong confidentiality to substance use treatment records. This means providers generally cannot share details without your loved one's consent. While this can feel frustrating for worried families, it also helps people feel safe seeking help.</p><h2>You Do Not Have to Do This Alone</h2><p>California Treatment Centers is in-network with most major insurers and has multiple locations across California. Our team can talk with you about how to approach your loved one, what options exist, and how to verify coverage at no cost.</p><p>If your loved one is in immediate danger or talking about suicide, call or text 988 right away. For free, confidential support any time, call SAMHSA at 1-800-662-4357.</p>
 </div></section>
 <section class="faq-bg" id="faq-section"><div class="container"><div class="section-label">Frequently Asked Questions</div><h2>Frequently Asked Questions</h2><div class="faq-list">

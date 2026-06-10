@@ -171,25 +171,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f2d4a;
-  --blue: #1a5fa8;
-  --blue-dark: #134880;
-  --sky: #e6f0fb;
-  --gold: #c07c18;
-  --gold-light: #f0a030;
+  /* California Treatment Centers — LUXURY palette: deep emerald + champagne gold + ivory */
+  --navy: #14302a;        /* deep emerald (nav, footer, headings) */
+  --blue: #3f6f60;        /* muted sage accent (links, labels) */
+  --blue-dark: #0f221d;
+  --sky: #eef1ea;         /* soft ivory-sage */
+  --gold: #b0914e;        /* champagne / brushed gold (primary accent) */
+  --gold-light: #cca967;  /* lighter gold (hover, logo accent) */
   --white: #fff;
-  --gray: #f4f6f9;
-  --text: #1a2433;
-  --muted: #536070;
-  --border: #d8e2ee;
-  --green: #156b3a;
-  --red-bar: #6b1010;
+  --gray: #f4f0e6;        /* warm ivory section bg */
+  --text: #20211c;        /* near-black warm */
+  --muted: #6f6a5c;
+  --border: #e7e0d0;      /* ivory border */
+  --green: #1d6b4f;
+  --red-bar: #4f2a1a;     /* understated crisis bar */
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.65; font-size: 16px; }
+body { font-family: 'Helvetica Neue', 'Inter', system-ui, -apple-system, Arial, sans-serif; color: var(--text); line-height: 1.72; font-size: 16px; background: #faf8f1; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ── CA LUXURY THEME: refined serif, champagne gold, generous whitespace ── */
+h1, h2, h3, .logo { font-family: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif; }
+h1 { font-weight: 600; letter-spacing: -.3px; line-height: 1.1; }
+h2 { color: var(--navy); font-weight: 600; }
+.section-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: .68rem; }
+/* elegant gold underline under the eyebrow label */
+.section-label::after { content: ""; display: block; width: 38px; height: 2px; background: var(--gold); margin-top: .6rem; opacity: .8; }
+/* refined rectangular gold CTAs (not bubbly) */
+.btn-primary, .submit-btn, .mobile-cta { background: var(--gold) !important; color: #20211c !important; border-radius: 4px !important; letter-spacing: 1.2px; text-transform: uppercase; font-size: .82rem !important; font-weight: 700; box-shadow: 0 6px 20px rgba(176,145,78,.25); }
+.btn-primary:hover, .submit-btn:hover { background: var(--gold-light) !important; }
+.nav-cta { background: transparent !important; color: var(--gold-light) !important; border: 1px solid var(--gold-light); border-radius: 4px !important; letter-spacing: .6px; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.card { border-radius: 8px; border: 1px solid var(--border); background: #fff; box-shadow: 0 2px 14px rgba(20,48,42,.05); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,48,42,.12); border-color: var(--gold-light); }
+.dropdown, .hero-card { border-radius: 10px; }
+.hero-card { border-top: 3px solid var(--gold); }
+nav { background: var(--navy); box-shadow: 0 1px 0 rgba(204,169,103,.25); }
+.logo span { color: var(--gold-light); }
+.logo { letter-spacing: .3px; }
+section { padding: 100px 0; }            /* generous luxury whitespace */
+.hero { background: linear-gradient(165deg, #faf8f1 0%, #eef1ea 100%); }
+.faq-bg { background: var(--gray); }
+.verify-section { border-top: 1px solid var(--border); }
+/* thin gold rule above the footer for a finished, premium edge */
+footer { border-top: 3px solid var(--gold); }
 
 /* ── CRISIS BAR ── */
 .crisis-bar { background: var(--red-bar); color: var(--white); text-align: center; padding: .55rem 5%; font-size: .84rem; font-weight: 600; }
@@ -661,7 +688,7 @@ p, li, h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
   <a href="mailto:support@alumniaidservices.com">&#9993; support@alumniaidservices.com</a>
   <a href="tel:2133216518" class="mobile-cta">&#128222; 213-321-6518</a>
 </div>
-<section><div class="container"><div class="section-label">Santa Clara County · Silicon Valley</div><h1>Drug & Alcohol Rehab Serving Santa Clara</h1><img src="/images/hero-recovery.svg" alt="Calm, supportive drug and alcohol rehab setting in California — California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
+<section><div class="container"><div class="section-label">Santa Clara County · Silicon Valley</div><h1>Drug & Alcohol Rehab Serving Santa Clara</h1><img src="/images/california-rehab-near-you.svg" alt="Drug &amp; Alcohol Rehab Serving Santa Clara | California Treatment Centers" title="Drug &amp; Alcohol Rehab Serving Santa Clara" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
 <p>California Treatment Centers helps people in Santa Clara take real steps toward recovery from drug and alcohol use. Home to a major university, large tech employers, and tree-lined residential neighborhoods, Santa Clara sits at the center of Silicon Valley between San Jose and Sunnyvale. We serve Santa Clara and the surrounding South Bay through our network of California locations, and we can arrange placement and travel when a program elsewhere is the better clinical fit.</p><h2>Local Context for Santa Clara Residents</h2><p>Between college students, young professionals, and established families, Santa Clara is a community where substance use can show up in very different ways, from binge drinking and stimulant use on campus to quiet dependence on prescribed medications among working adults. The fast pace of Silicon Valley and the constant push to perform can make these patterns easy to rationalize and easy to hide. People often tell themselves they will cut back once a project ends or a semester wraps up, and the cycle continues. We help residents see their options clearly and connect with licensed, appropriate care without judgment.</p><h2>Levels of Care</h2><p>Because needs differ and change over time, we help Santa Clara residents access a full continuum that can step up or down as recovery evolves:</p><ul><li><strong>Medical detox</strong> with supervised withdrawal management and monitoring</li><li><strong>Residential treatment</strong> for structured, live-in support</li><li><strong>Partial hospitalization (PHP)</strong> for intensive daytime care</li><li><strong>Intensive outpatient (IOP)</strong> that fits school, work, and family</li><li><strong>Standard outpatient</strong> for continued therapy as you stabilize</li><li><strong>Sober living and sober companionship</strong> for structure and accountability</li></ul><h2>Care for the Whole Person</h2><p>Recovery that lasts addresses underlying drivers, not just the substance. Our network programs combine evidence-based therapies with support for co-occurring anxiety, depression, and trauma, since untreated mental health conditions often fuel relapse. When withdrawal poses risks, <a href="/medical-detox">medical detox</a> can provide a safe, medically supervised start, and <a href="/outpatient-treatment">outpatient treatment</a> helps people maintain progress within their Santa Clara routines of work, study, and family.</p><h2>What Treatment May Include</h2><ul><li>Individual and group counseling</li><li>Medication-assisted treatment where appropriate</li><li>Relapse-prevention and coping skills</li><li>Aftercare planning and family support</li><li>Connection to community recovery resources in the South Bay</li></ul><h2>Insurance & Cost</h2><p>California Treatment Centers is in-network with most major insurers, and we offer free, confidential insurance verification. Many plans cover detox, residential, and outpatient services. Reach out and we will help you understand your coverage and what to expect before you commit to a program, with no obligation.</p><h2>How to Get Started</h2><p>Begin with a confidential call. Dial <strong>213-321-6518</strong> to discuss your situation and outline next steps for yourself or a loved one in Santa Clara. If you or someone you love is in immediate danger or experiencing a mental health crisis, call or text <strong>988</strong> for free, 24/7 support.</p>
 </div></section>
 <section class="faq-bg" id="faq-section"><div class="container"><div class="section-label">Frequently Asked Questions</div><h2>Frequently Asked Questions</h2><div class="faq-list">

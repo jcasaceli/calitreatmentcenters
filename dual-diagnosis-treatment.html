@@ -179,25 +179,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f2d4a;
-  --blue: #1a5fa8;
-  --blue-dark: #134880;
-  --sky: #e6f0fb;
-  --gold: #c07c18;
-  --gold-light: #f0a030;
+  /* California Treatment Centers — LUXURY palette: deep emerald + champagne gold + ivory */
+  --navy: #14302a;        /* deep emerald (nav, footer, headings) */
+  --blue: #3f6f60;        /* muted sage accent (links, labels) */
+  --blue-dark: #0f221d;
+  --sky: #eef1ea;         /* soft ivory-sage */
+  --gold: #b0914e;        /* champagne / brushed gold (primary accent) */
+  --gold-light: #cca967;  /* lighter gold (hover, logo accent) */
   --white: #fff;
-  --gray: #f4f6f9;
-  --text: #1a2433;
-  --muted: #536070;
-  --border: #d8e2ee;
-  --green: #156b3a;
-  --red-bar: #6b1010;
+  --gray: #f4f0e6;        /* warm ivory section bg */
+  --text: #20211c;        /* near-black warm */
+  --muted: #6f6a5c;
+  --border: #e7e0d0;      /* ivory border */
+  --green: #1d6b4f;
+  --red-bar: #4f2a1a;     /* understated crisis bar */
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.65; font-size: 16px; }
+body { font-family: 'Helvetica Neue', 'Inter', system-ui, -apple-system, Arial, sans-serif; color: var(--text); line-height: 1.72; font-size: 16px; background: #faf8f1; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ── CA LUXURY THEME: refined serif, champagne gold, generous whitespace ── */
+h1, h2, h3, .logo { font-family: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif; }
+h1 { font-weight: 600; letter-spacing: -.3px; line-height: 1.1; }
+h2 { color: var(--navy); font-weight: 600; }
+.section-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: .68rem; }
+/* elegant gold underline under the eyebrow label */
+.section-label::after { content: ""; display: block; width: 38px; height: 2px; background: var(--gold); margin-top: .6rem; opacity: .8; }
+/* refined rectangular gold CTAs (not bubbly) */
+.btn-primary, .submit-btn, .mobile-cta { background: var(--gold) !important; color: #20211c !important; border-radius: 4px !important; letter-spacing: 1.2px; text-transform: uppercase; font-size: .82rem !important; font-weight: 700; box-shadow: 0 6px 20px rgba(176,145,78,.25); }
+.btn-primary:hover, .submit-btn:hover { background: var(--gold-light) !important; }
+.nav-cta { background: transparent !important; color: var(--gold-light) !important; border: 1px solid var(--gold-light); border-radius: 4px !important; letter-spacing: .6px; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.card { border-radius: 8px; border: 1px solid var(--border); background: #fff; box-shadow: 0 2px 14px rgba(20,48,42,.05); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,48,42,.12); border-color: var(--gold-light); }
+.dropdown, .hero-card { border-radius: 10px; }
+.hero-card { border-top: 3px solid var(--gold); }
+nav { background: var(--navy); box-shadow: 0 1px 0 rgba(204,169,103,.25); }
+.logo span { color: var(--gold-light); }
+.logo { letter-spacing: .3px; }
+section { padding: 100px 0; }            /* generous luxury whitespace */
+.hero { background: linear-gradient(165deg, #faf8f1 0%, #eef1ea 100%); }
+.faq-bg { background: var(--gray); }
+.verify-section { border-top: 1px solid var(--border); }
+/* thin gold rule above the footer for a finished, premium edge */
+footer { border-top: 3px solid var(--gold); }
 
 /* ── CRISIS BAR ── */
 .crisis-bar { background: var(--red-bar); color: var(--white); text-align: center; padding: .55rem 5%; font-size: .84rem; font-weight: 600; }
@@ -669,7 +696,7 @@ p, li, h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
   <a href="mailto:support@alumniaidservices.com">&#9993; support@alumniaidservices.com</a>
   <a href="tel:2133216518" class="mobile-cta">&#128222; 213-321-6518</a>
 </div>
-<section><div class="container"><div class="section-label">What We Treat</div><h1>Dual Diagnosis Treatment in California</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/hero-recovery.svg" alt="Calm, supportive drug and alcohol rehab setting in California — California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
+<section><div class="container"><div class="section-label">What We Treat</div><h1>Dual Diagnosis Treatment in California</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/california-drug-alcohol-rehab.svg" alt="Dual Diagnosis Treatment in California | California Treatment Centers" title="Dual Diagnosis Treatment in California" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
 <p>For many people, addiction and mental illness are deeply intertwined. Anxiety, depression, trauma, or bipolar disorder can fuel substance use, and substance use can worsen mental-health symptoms, creating a cycle that's hard to break. At California Treatment Centers, our dual diagnosis programs treat both at once, because lasting recovery rarely comes from addressing only one. We serve clients statewide from multiple California locations.</p><h2>What Is Dual Diagnosis?</h2><p>Dual diagnosis, also called co-occurring disorders, describes the presence of both a substance use disorder and a mental-health condition at the same time. This is common, not unusual. When the two go untreated together, treating just the addiction often leaves the underlying pain in place, and treating just the mental health leaves the substance use to undermine progress.</p><h2>Common Co-Occurring Conditions</h2><ul><li>Depression and persistent low mood</li><li>Anxiety disorders and panic disorder</li><li>Post-traumatic stress disorder (PTSD) and trauma histories</li><li>Bipolar disorder</li><li>ADHD</li><li>Obsessive-compulsive disorder and other conditions</li></ul><h2>Signs You May Benefit From Dual Diagnosis Care</h2><ul><li>Using substances to cope with anxiety, sadness, or painful memories</li><li>Mental-health symptoms that worsen when you use, or when you stop</li><li>Relapsing after treatment that addressed only the addiction</li><li>Feeling that something deeper is driving the substance use</li></ul><h2>Why Integrated Treatment Works Better</h2><p>Decades of clinical experience show that integrated care, treating both conditions together with one coordinated team, leads to better outcomes than treating them separately or in sequence. When your therapists and medical providers understand the full picture, they can tailor therapy and any medications to support both your recovery and your mental health.</p><h2>How We Treat Co-Occurring Disorders</h2><div class="card-grid-4"><div class="card"><h3>Medical Detox</h3><p>Safe, supervised withdrawal management as the foundation for deeper work.</p></div><div class="card"><h3>Residential Treatment</h3><p>Immersive care with integrated mental-health and addiction therapy.</p></div><div class="card"><h3>Outpatient Treatment</h3><p>Flexible, ongoing support that fits around your life.</p></div><div class="card"><h3>Therapy &amp; Medication</h3><p>Evidence-based therapy plus psychiatric care when appropriate.</p></div></div><p>Care often begins with <a href="/medical-detox">medical detox</a> when a substance requires it, then continues through <a href="/residential-treatment">residential treatment</a> and <a href="/outpatient-treatment">outpatient treatment</a>. Throughout, we use evidence-based approaches such as cognitive behavioral therapy, dialectical behavior therapy, trauma-informed care, and psychiatric support. When medication is part of the plan, our providers coordinate it carefully alongside therapy.</p><h2>Compassionate, Coordinated Care</h2><p>You are not your diagnosis, and you are not alone. Our team treats the whole person with respect and without judgment, building a plan around your goals, your history, and your strengths.</p><h2>Getting Started</h2><p>We are in-network with most major insurers, and insurance verification is free and confidential. Our admissions team can help you understand your options and find the right level of care. Reach out today, and let our coordinated team help you treat both the addiction and the mental-health condition behind it, so recovery finally has a foundation that holds.</p><p>If you or someone you love is in crisis, call or text 988. The free SAMHSA National Helpline at 1-800-662-4357 is available 24/7.</p>
 </div></section>
 <section class="faq-bg" id="faq-section"><div class="container"><div class="section-label">Frequently Asked Questions</div><h2>Frequently Asked Questions</h2><div class="faq-list">

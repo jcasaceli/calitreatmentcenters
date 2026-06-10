@@ -179,25 +179,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f2d4a;
-  --blue: #1a5fa8;
-  --blue-dark: #134880;
-  --sky: #e6f0fb;
-  --gold: #c07c18;
-  --gold-light: #f0a030;
+  /* California Treatment Centers — LUXURY palette: deep emerald + champagne gold + ivory */
+  --navy: #14302a;        /* deep emerald (nav, footer, headings) */
+  --blue: #3f6f60;        /* muted sage accent (links, labels) */
+  --blue-dark: #0f221d;
+  --sky: #eef1ea;         /* soft ivory-sage */
+  --gold: #b0914e;        /* champagne / brushed gold (primary accent) */
+  --gold-light: #cca967;  /* lighter gold (hover, logo accent) */
   --white: #fff;
-  --gray: #f4f6f9;
-  --text: #1a2433;
-  --muted: #536070;
-  --border: #d8e2ee;
-  --green: #156b3a;
-  --red-bar: #6b1010;
+  --gray: #f4f0e6;        /* warm ivory section bg */
+  --text: #20211c;        /* near-black warm */
+  --muted: #6f6a5c;
+  --border: #e7e0d0;      /* ivory border */
+  --green: #1d6b4f;
+  --red-bar: #4f2a1a;     /* understated crisis bar */
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.65; font-size: 16px; }
+body { font-family: 'Helvetica Neue', 'Inter', system-ui, -apple-system, Arial, sans-serif; color: var(--text); line-height: 1.72; font-size: 16px; background: #faf8f1; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ── CA LUXURY THEME: refined serif, champagne gold, generous whitespace ── */
+h1, h2, h3, .logo { font-family: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif; }
+h1 { font-weight: 600; letter-spacing: -.3px; line-height: 1.1; }
+h2 { color: var(--navy); font-weight: 600; }
+.section-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: .68rem; }
+/* elegant gold underline under the eyebrow label */
+.section-label::after { content: ""; display: block; width: 38px; height: 2px; background: var(--gold); margin-top: .6rem; opacity: .8; }
+/* refined rectangular gold CTAs (not bubbly) */
+.btn-primary, .submit-btn, .mobile-cta { background: var(--gold) !important; color: #20211c !important; border-radius: 4px !important; letter-spacing: 1.2px; text-transform: uppercase; font-size: .82rem !important; font-weight: 700; box-shadow: 0 6px 20px rgba(176,145,78,.25); }
+.btn-primary:hover, .submit-btn:hover { background: var(--gold-light) !important; }
+.nav-cta { background: transparent !important; color: var(--gold-light) !important; border: 1px solid var(--gold-light); border-radius: 4px !important; letter-spacing: .6px; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.card { border-radius: 8px; border: 1px solid var(--border); background: #fff; box-shadow: 0 2px 14px rgba(20,48,42,.05); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,48,42,.12); border-color: var(--gold-light); }
+.dropdown, .hero-card { border-radius: 10px; }
+.hero-card { border-top: 3px solid var(--gold); }
+nav { background: var(--navy); box-shadow: 0 1px 0 rgba(204,169,103,.25); }
+.logo span { color: var(--gold-light); }
+.logo { letter-spacing: .3px; }
+section { padding: 100px 0; }            /* generous luxury whitespace */
+.hero { background: linear-gradient(165deg, #faf8f1 0%, #eef1ea 100%); }
+.faq-bg { background: var(--gray); }
+.verify-section { border-top: 1px solid var(--border); }
+/* thin gold rule above the footer for a finished, premium edge */
+footer { border-top: 3px solid var(--gold); }
 
 /* ── CRISIS BAR ── */
 .crisis-bar { background: var(--red-bar); color: var(--white); text-align: center; padding: .55rem 5%; font-size: .84rem; font-weight: 600; }
@@ -669,7 +696,7 @@ p, li, h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
   <a href="mailto:support@alumniaidservices.com">&#9993; support@alumniaidservices.com</a>
   <a href="tel:2133216518" class="mobile-cta">&#128222; 213-321-6518</a>
 </div>
-<section><div class="container"><div class="section-label">Orange County</div><h1>Drug & Alcohol Rehab Serving Huntington Beach, California</h1><img src="/images/hero-recovery.svg" alt="Calm, supportive drug and alcohol rehab setting in California — California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
+<section><div class="container"><div class="section-label">Orange County</div><h1>Drug & Alcohol Rehab Serving Huntington Beach, California</h1><img src="/images/california-rehab-near-you.svg" alt="Drug &amp; Alcohol Rehab Serving Huntington Beach, California | California Treatment Centers" title="Drug &amp; Alcohol Rehab Serving Huntington Beach, California" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
 <p>California Treatment Centers serves Huntington Beach and the surrounding coastal Orange County area, helping residents from the Downtown and Pier neighborhoods to nearby Fountain Valley, Westminster, Costa Mesa, Seal Beach and Newport Beach access evidence-based care for drug and alcohol use. We connect Huntington Beach residents with our California programs and can arrange placement and travel to another of our locations when that best supports recovery.</p>
 <h2>Addiction Treatment for Huntington Beach Residents</h2>
 <p>Known as Surf City, Huntington Beach is built around a relaxed beach lifestyle — one where social drinking is woven into daily life and the line between unwinding and dependence can quietly blur. Behind the easygoing image, many residents and families quietly struggle. Our care meets people where they are, offering confidential, evidence-based treatment without judgment for this stretch of the Orange County coast.</p>

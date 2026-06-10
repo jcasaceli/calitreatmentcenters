@@ -179,25 +179,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f2d4a;
-  --blue: #1a5fa8;
-  --blue-dark: #134880;
-  --sky: #e6f0fb;
-  --gold: #c07c18;
-  --gold-light: #f0a030;
+  /* California Treatment Centers — LUXURY palette: deep emerald + champagne gold + ivory */
+  --navy: #14302a;        /* deep emerald (nav, footer, headings) */
+  --blue: #3f6f60;        /* muted sage accent (links, labels) */
+  --blue-dark: #0f221d;
+  --sky: #eef1ea;         /* soft ivory-sage */
+  --gold: #b0914e;        /* champagne / brushed gold (primary accent) */
+  --gold-light: #cca967;  /* lighter gold (hover, logo accent) */
   --white: #fff;
-  --gray: #f4f6f9;
-  --text: #1a2433;
-  --muted: #536070;
-  --border: #d8e2ee;
-  --green: #156b3a;
-  --red-bar: #6b1010;
+  --gray: #f4f0e6;        /* warm ivory section bg */
+  --text: #20211c;        /* near-black warm */
+  --muted: #6f6a5c;
+  --border: #e7e0d0;      /* ivory border */
+  --green: #1d6b4f;
+  --red-bar: #4f2a1a;     /* understated crisis bar */
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.65; font-size: 16px; }
+body { font-family: 'Helvetica Neue', 'Inter', system-ui, -apple-system, Arial, sans-serif; color: var(--text); line-height: 1.72; font-size: 16px; background: #faf8f1; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ── CA LUXURY THEME: refined serif, champagne gold, generous whitespace ── */
+h1, h2, h3, .logo { font-family: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif; }
+h1 { font-weight: 600; letter-spacing: -.3px; line-height: 1.1; }
+h2 { color: var(--navy); font-weight: 600; }
+.section-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: .68rem; }
+/* elegant gold underline under the eyebrow label */
+.section-label::after { content: ""; display: block; width: 38px; height: 2px; background: var(--gold); margin-top: .6rem; opacity: .8; }
+/* refined rectangular gold CTAs (not bubbly) */
+.btn-primary, .submit-btn, .mobile-cta { background: var(--gold) !important; color: #20211c !important; border-radius: 4px !important; letter-spacing: 1.2px; text-transform: uppercase; font-size: .82rem !important; font-weight: 700; box-shadow: 0 6px 20px rgba(176,145,78,.25); }
+.btn-primary:hover, .submit-btn:hover { background: var(--gold-light) !important; }
+.nav-cta { background: transparent !important; color: var(--gold-light) !important; border: 1px solid var(--gold-light); border-radius: 4px !important; letter-spacing: .6px; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.card { border-radius: 8px; border: 1px solid var(--border); background: #fff; box-shadow: 0 2px 14px rgba(20,48,42,.05); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,48,42,.12); border-color: var(--gold-light); }
+.dropdown, .hero-card { border-radius: 10px; }
+.hero-card { border-top: 3px solid var(--gold); }
+nav { background: var(--navy); box-shadow: 0 1px 0 rgba(204,169,103,.25); }
+.logo span { color: var(--gold-light); }
+.logo { letter-spacing: .3px; }
+section { padding: 100px 0; }            /* generous luxury whitespace */
+.hero { background: linear-gradient(165deg, #faf8f1 0%, #eef1ea 100%); }
+.faq-bg { background: var(--gray); }
+.verify-section { border-top: 1px solid var(--border); }
+/* thin gold rule above the footer for a finished, premium edge */
+footer { border-top: 3px solid var(--gold); }
 
 /* ── CRISIS BAR ── */
 .crisis-bar { background: var(--red-bar); color: var(--white); text-align: center; padding: .55rem 5%; font-size: .84rem; font-weight: 600; }
@@ -669,7 +696,7 @@ p, li, h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
   <a href="mailto:support@alumniaidservices.com">&#9993; support@alumniaidservices.com</a>
   <a href="tel:2133216518" class="mobile-cta">&#128222; 213-321-6518</a>
 </div>
-<section><div class="container"><div class="section-label">Southwest Riverside County</div><h1>Drug & Alcohol Rehab Serving Murrieta & Southwest Riverside County</h1><img src="/images/hero-recovery.svg" alt="Calm, supportive drug and alcohol rehab setting in California — California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
+<section><div class="container"><div class="section-label">Southwest Riverside County</div><h1>Drug & Alcohol Rehab Serving Murrieta & Southwest Riverside County</h1><img src="/images/california-rehab-near-you.svg" alt="Drug &amp; Alcohol Rehab Serving Murrieta &amp; Southwest Riverside County | California Treatment Centers" title="Drug &amp; Alcohol Rehab Serving Murrieta &amp; Southwest Riverside County" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
 <p>If you are looking for a rehab or detox near Murrieta, California Treatment Centers serves Murrieta and the surrounding Southwest Riverside County area. Murrieta sits in the fast-growing southwest corner of Riverside County, directly beside Temecula and Wildomar, near Menifee and Lake Elsinore, and roughly between the larger metros of Riverside and San Diego along the 15 and 215 freeways. We operate multiple licensed locations across California and serve clients statewide, so we can help arrange the right level of care for you or your loved one, including placement and travel when a setting away from home supports recovery.</p><h2>A Continuum of Care</h2><p>Because addiction and alcohol use disorders vary widely, we help match each person to an appropriate level of care and adjust it as they make progress.</p><div class="card-grid-4"><div><h3>Medical Detox</h3><p>Supervised stabilization during withdrawal. Severe alcohol or benzodiazepine withdrawal generally requires medical oversight.</p></div><div><h3>Residential</h3><p>24-hour structured care that creates space away from daily triggers.</p></div><div><h3>PHP & IOP</h3><p>Day treatment and intensive outpatient that let you step down while living at home.</p></div><div><h3>Outpatient & Support</h3><p>Ongoing outpatient care, sober living and sober companionship for lasting recovery.</p></div></div><p>The right level depends on the severity of use, the medical risk of withdrawal, and the support around you. We will help you figure out where to begin.</p><h2>Murrieta & Southwest County Context</h2><p>Murrieta is one of the region's family-oriented commuter communities, with many residents driving long distances to jobs in Orange County, San Diego and Riverside. That commuter lifestyle, combined with rapid suburban growth, can leave people isolated when substance use takes hold, and the long days on the road can mask how serious things have become. Because Murrieta is a meaningful drive from the larger urban treatment hubs, having a provider that serves the area and can arrange care, including residential placement when needed, makes a real difference. Many people continue with <a href="/outpatient-treatment">outpatient treatment</a> closer to home after a more intensive start.</p><h3>Help for Families</h3><p>Many of the calls we receive come from a worried spouse, parent or adult child rather than the person who is struggling. If you are watching a loved one in Murrieta lose ground to alcohol or drugs, we can talk through the situation confidentially and walk you through options, including <a href="/residential-treatment">residential treatment</a> and how to approach the conversation.</p><h2>Insurance & Verification</h2><p>California Treatment Centers is in-network with most major insurers. We provide a free, confidential benefits check so you know your coverage before committing. Reach out and we will verify your plan and take the guesswork out of cost.</p><h3>How to Begin</h3><p>Call us for a confidential, no-pressure conversation about what you or your loved one in Murrieta is facing. We will verify your insurance at no cost and help you choose a starting point. If you or someone you know is in immediate danger or having suicidal thoughts, call or text 988 right away.</p>
 </div></section>
 <section class="faq-bg" id="faq-section"><div class="container"><div class="section-label">Frequently Asked Questions</div><h2>Frequently Asked Questions</h2><div class="faq-list">

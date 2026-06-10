@@ -179,25 +179,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f2d4a;
-  --blue: #1a5fa8;
-  --blue-dark: #134880;
-  --sky: #e6f0fb;
-  --gold: #c07c18;
-  --gold-light: #f0a030;
+  /* California Treatment Centers — LUXURY palette: deep emerald + champagne gold + ivory */
+  --navy: #14302a;        /* deep emerald (nav, footer, headings) */
+  --blue: #3f6f60;        /* muted sage accent (links, labels) */
+  --blue-dark: #0f221d;
+  --sky: #eef1ea;         /* soft ivory-sage */
+  --gold: #b0914e;        /* champagne / brushed gold (primary accent) */
+  --gold-light: #cca967;  /* lighter gold (hover, logo accent) */
   --white: #fff;
-  --gray: #f4f6f9;
-  --text: #1a2433;
-  --muted: #536070;
-  --border: #d8e2ee;
-  --green: #156b3a;
-  --red-bar: #6b1010;
+  --gray: #f4f0e6;        /* warm ivory section bg */
+  --text: #20211c;        /* near-black warm */
+  --muted: #6f6a5c;
+  --border: #e7e0d0;      /* ivory border */
+  --green: #1d6b4f;
+  --red-bar: #4f2a1a;     /* understated crisis bar */
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.65; font-size: 16px; }
+body { font-family: 'Helvetica Neue', 'Inter', system-ui, -apple-system, Arial, sans-serif; color: var(--text); line-height: 1.72; font-size: 16px; background: #faf8f1; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ── CA LUXURY THEME: refined serif, champagne gold, generous whitespace ── */
+h1, h2, h3, .logo { font-family: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif; }
+h1 { font-weight: 600; letter-spacing: -.3px; line-height: 1.1; }
+h2 { color: var(--navy); font-weight: 600; }
+.section-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: .68rem; }
+/* elegant gold underline under the eyebrow label */
+.section-label::after { content: ""; display: block; width: 38px; height: 2px; background: var(--gold); margin-top: .6rem; opacity: .8; }
+/* refined rectangular gold CTAs (not bubbly) */
+.btn-primary, .submit-btn, .mobile-cta { background: var(--gold) !important; color: #20211c !important; border-radius: 4px !important; letter-spacing: 1.2px; text-transform: uppercase; font-size: .82rem !important; font-weight: 700; box-shadow: 0 6px 20px rgba(176,145,78,.25); }
+.btn-primary:hover, .submit-btn:hover { background: var(--gold-light) !important; }
+.nav-cta { background: transparent !important; color: var(--gold-light) !important; border: 1px solid var(--gold-light); border-radius: 4px !important; letter-spacing: .6px; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.card { border-radius: 8px; border: 1px solid var(--border); background: #fff; box-shadow: 0 2px 14px rgba(20,48,42,.05); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,48,42,.12); border-color: var(--gold-light); }
+.dropdown, .hero-card { border-radius: 10px; }
+.hero-card { border-top: 3px solid var(--gold); }
+nav { background: var(--navy); box-shadow: 0 1px 0 rgba(204,169,103,.25); }
+.logo span { color: var(--gold-light); }
+.logo { letter-spacing: .3px; }
+section { padding: 100px 0; }            /* generous luxury whitespace */
+.hero { background: linear-gradient(165deg, #faf8f1 0%, #eef1ea 100%); }
+.faq-bg { background: var(--gray); }
+.verify-section { border-top: 1px solid var(--border); }
+/* thin gold rule above the footer for a finished, premium edge */
+footer { border-top: 3px solid var(--gold); }
 
 /* ── CRISIS BAR ── */
 .crisis-bar { background: var(--red-bar); color: var(--white); text-align: center; padding: .55rem 5%; font-size: .84rem; font-weight: 600; }
@@ -669,7 +696,7 @@ p, li, h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
   <a href="mailto:support@alumniaidservices.com">&#9993; support@alumniaidservices.com</a>
   <a href="tel:2133216518" class="mobile-cta">&#128222; 213-321-6518</a>
 </div>
-<section><div class="container"><div class="section-label">Guide</div><h1>Levels of Addiction Care</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/hero-recovery.svg" alt="Calm, supportive drug and alcohol rehab setting in California — California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
+<section><div class="container"><div class="section-label">Guide</div><h1>Levels of Addiction Care</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/california-rehab-near-you.svg" alt="Levels of Addiction Care | California Treatment Centers" title="Levels of Addiction Care" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
 <p>Addiction treatment is not one-size-fits-all. Care is organized into different levels of intensity so that treatment can match a person's medical needs, safety risks, and life circumstances. This guide explains the common levels of care in plain language. It is general education, not medical advice; a clinical assessment is the best way to know which level fits you.</p><h2>How Levels of Care Work</h2><p>The American Society of Addiction Medicine (ASAM) defines a continuum of care, from the most intensive, around-the-clock medical settings to flexible outpatient services. People often move down the continuum as they stabilize, stepping from higher to lower intensity over time. Some start in the middle, and some step back up if they need more support. The goal is the right level of care at the right time.</p><h2>Medical Detox</h2><p>For people who are physically dependent, treatment often begins with <a href="/medical-detox">medical detox</a>. This level provides monitoring and, when appropriate, medication to manage withdrawal safely. It is especially important for alcohol and benzodiazepine withdrawal, which can be dangerous and require medical supervision. Detox stabilizes the body so a person can engage in therapy.</p><h2>Residential and Inpatient Treatment</h2><p>In <a href="/residential-treatment">residential treatment</a>, you live at a facility and receive structured care throughout the day. This level offers a substance-free environment, daily therapy, and 24-hour support, which can be valuable for people with severe substance use, unstable home environments, or co-occurring conditions. Inpatient care provides the highest medical oversight for those who need it.</p><h2>Partial Hospitalization and Intensive Outpatient</h2><p>These middle levels offer substantial structure while allowing you to live at home or in supportive housing.</p><ul><li><strong>Partial hospitalization (PHP):</strong> Often a full daily schedule of therapy and medical support, typically five days a week, without overnight stays.</li><li><strong>Intensive outpatient (IOP):</strong> Several hours of group and individual therapy several days a week, leaving room for work, school, or caregiving.</li></ul><h2>Standard Outpatient</h2><p>Standard <a href="/outpatient-treatment">outpatient treatment</a> involves regular but less frequent sessions, such as weekly therapy and check-ins. It often serves as a step-down for people who have stabilized or as a starting point for those with milder symptoms and strong support at home.</p><div class="card-grid-4"><div><h3>Medical Detox</h3><p>Supervised withdrawal management with monitoring and medication when needed.</p></div><div><h3>Residential</h3><p>Live-in care with daily therapy and 24-hour support.</p></div><div><h3>PHP / IOP</h3><p>Structured day or part-day programs while living at home.</p></div><div><h3>Outpatient</h3><p>Flexible ongoing sessions that fit around daily responsibilities.</p></div></div><h2>Supporting Services</h2><p>Several services span multiple levels. Medication-assisted treatment combines FDA-approved medications with counseling for opioid and alcohol use disorders. Dual diagnosis treatment addresses mental health conditions like anxiety, depression, or trauma alongside substance use. And sober living homes provide structured, substance-free housing that supports people as they transition back to independent life.</p><h2>How to Choose a Level</h2><p>The right level depends on factors such as withdrawal risk, medical and mental health needs, relapse history, and your living environment. ASAM organizes these considerations into dimensions that a clinician reviews during an assessment, so the recommendation reflects your whole situation rather than a single symptom. There is no shame in needing a higher level of care, and there is no failure in stepping down to a lower one. The plan should fit you, and it can change as you progress.</p><h2>Why Matching Matters</h2><p>Choosing a level that is too low can leave someone without the support they need to stay safe, while a level that is far more intensive than necessary can be disruptive to work and family without added benefit. The aim is a thoughtful match. A quality provider reassesses over time and adjusts the plan as your needs shift, which is one reason continuity within a single program or coordinated network can be so valuable.</p><h2>Get Help Finding the Right Level</h2><p>California Treatment Centers is in-network with most major insurers and has multiple locations across California, so we can help match you to an appropriate level of care and verify your benefits at no cost. If you are unsure where to begin, a simple conversation and assessment can point you in the right direction.</p><p>If you are in crisis, call or text 988. For free, confidential treatment referrals any time, call SAMHSA at 1-800-662-4357.</p>
 </div></section>
 <section class="faq-bg" id="faq-section"><div class="container"><div class="section-label">Frequently Asked Questions</div><h2>Frequently Asked Questions</h2><div class="faq-list">

@@ -179,25 +179,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f2d4a;
-  --blue: #1a5fa8;
-  --blue-dark: #134880;
-  --sky: #e6f0fb;
-  --gold: #c07c18;
-  --gold-light: #f0a030;
+  /* California Treatment Centers — LUXURY palette: deep emerald + champagne gold + ivory */
+  --navy: #14302a;        /* deep emerald (nav, footer, headings) */
+  --blue: #3f6f60;        /* muted sage accent (links, labels) */
+  --blue-dark: #0f221d;
+  --sky: #eef1ea;         /* soft ivory-sage */
+  --gold: #b0914e;        /* champagne / brushed gold (primary accent) */
+  --gold-light: #cca967;  /* lighter gold (hover, logo accent) */
   --white: #fff;
-  --gray: #f4f6f9;
-  --text: #1a2433;
-  --muted: #536070;
-  --border: #d8e2ee;
-  --green: #156b3a;
-  --red-bar: #6b1010;
+  --gray: #f4f0e6;        /* warm ivory section bg */
+  --text: #20211c;        /* near-black warm */
+  --muted: #6f6a5c;
+  --border: #e7e0d0;      /* ivory border */
+  --green: #1d6b4f;
+  --red-bar: #4f2a1a;     /* understated crisis bar */
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.65; font-size: 16px; }
+body { font-family: 'Helvetica Neue', 'Inter', system-ui, -apple-system, Arial, sans-serif; color: var(--text); line-height: 1.72; font-size: 16px; background: #faf8f1; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ── CA LUXURY THEME: refined serif, champagne gold, generous whitespace ── */
+h1, h2, h3, .logo { font-family: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif; }
+h1 { font-weight: 600; letter-spacing: -.3px; line-height: 1.1; }
+h2 { color: var(--navy); font-weight: 600; }
+.section-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: .68rem; }
+/* elegant gold underline under the eyebrow label */
+.section-label::after { content: ""; display: block; width: 38px; height: 2px; background: var(--gold); margin-top: .6rem; opacity: .8; }
+/* refined rectangular gold CTAs (not bubbly) */
+.btn-primary, .submit-btn, .mobile-cta { background: var(--gold) !important; color: #20211c !important; border-radius: 4px !important; letter-spacing: 1.2px; text-transform: uppercase; font-size: .82rem !important; font-weight: 700; box-shadow: 0 6px 20px rgba(176,145,78,.25); }
+.btn-primary:hover, .submit-btn:hover { background: var(--gold-light) !important; }
+.nav-cta { background: transparent !important; color: var(--gold-light) !important; border: 1px solid var(--gold-light); border-radius: 4px !important; letter-spacing: .6px; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.card { border-radius: 8px; border: 1px solid var(--border); background: #fff; box-shadow: 0 2px 14px rgba(20,48,42,.05); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,48,42,.12); border-color: var(--gold-light); }
+.dropdown, .hero-card { border-radius: 10px; }
+.hero-card { border-top: 3px solid var(--gold); }
+nav { background: var(--navy); box-shadow: 0 1px 0 rgba(204,169,103,.25); }
+.logo span { color: var(--gold-light); }
+.logo { letter-spacing: .3px; }
+section { padding: 100px 0; }            /* generous luxury whitespace */
+.hero { background: linear-gradient(165deg, #faf8f1 0%, #eef1ea 100%); }
+.faq-bg { background: var(--gray); }
+.verify-section { border-top: 1px solid var(--border); }
+/* thin gold rule above the footer for a finished, premium edge */
+footer { border-top: 3px solid var(--gold); }
 
 /* ── CRISIS BAR ── */
 .crisis-bar { background: var(--red-bar); color: var(--white); text-align: center; padding: .55rem 5%; font-size: .84rem; font-weight: 600; }
@@ -669,7 +696,7 @@ p, li, h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
   <a href="mailto:support@alumniaidservices.com">&#9993; support@alumniaidservices.com</a>
   <a href="tel:2133216518" class="mobile-cta">&#128222; 213-321-6518</a>
 </div>
-<section><div class="container"><div class="section-label">Insurance</div><h1>Anthem Coverage for Addiction Treatment</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/hero-recovery.svg" alt="Calm, supportive drug and alcohol rehab setting in California — California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
+<section><div class="container"><div class="section-label">Insurance</div><h1>Anthem Coverage for Addiction Treatment</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/california-rehab-insurance-coverage.svg" alt="Anthem Coverage for Addiction Treatment | California Treatment Centers" title="Anthem Coverage for Addiction Treatment" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
 <p>Anthem is one of California's largest insurers, and for many members it provides strong benefits for addiction treatment. California Treatment Centers is in-network with Anthem, which often means lower out-of-pocket costs and an easier admissions process. We verify your exact benefits for free so cost never stands in the way of recovery.</p><h2>Being In-Network With Anthem</h2><p>As an in-network provider, we have an established agreement with Anthem that typically results in better coverage and lower costs than out-of-network treatment. Your final responsibility depends on your specific plan, but choosing an in-network facility is one of the most effective ways to keep care affordable.</p><h2>What Anthem Typically Covers</h2><p>Anthem plans generally include benefits across the full range of addiction care. Coverage varies by plan, but Anthem may cover services such as:</p><ul><li><a href="/medical-detox">Medical detox</a> for safe, supervised withdrawal management</li><li><a href="/residential-treatment">Residential or inpatient treatment</a> with 24-hour clinical support</li><li>Partial hospitalization programs (PHP) for intensive structured care</li><li>Intensive outpatient programs (IOP) and standard <a href="/outpatient-treatment">outpatient treatment</a></li><li>Medication-assisted treatment (MAT) for opioid and alcohol dependence</li></ul><p>Most people move through more than one of these levels during recovery. Care often starts with stabilization and steps down to less intensive support, and Anthem plans are frequently structured to cover that full continuum.</p><div class="card-grid-4"><div><h3>Detox</h3><p>Medically supervised withdrawal as the first step.</p></div><div><h3>Residential</h3><p>Structured, 24-hour care in a supportive setting.</p></div><div><h3>PHP &amp; IOP</h3><p>Intensive treatment while living at home or in housing.</p></div><div><h3>MAT</h3><p>FDA-approved medication paired with counseling.</p></div></div><h2>How Parity Law Protects You</h2><p>The Mental Health Parity and Addiction Equity Act requires most insurers, including Anthem, to cover substance use and mental health care comparably to medical and surgical services. This means your addiction treatment benefits cannot be subject to stricter limits or higher costs than your general medical coverage, helping Anthem members access the care they need. If you were previously told that rehab was not covered, it is worth checking again, since these protections may apply to your plan.</p><h2>Understanding Your Costs</h2><p>Your out-of-pocket cost depends on the details of your plan, such as your deductible, copay, coinsurance, and any prior authorization requirements. A deductible is what you pay before coverage begins, while a copay or coinsurance is your share of each service afterward. Because we are in-network, in-network rates typically apply, which usually lowers your cost. Because every plan differs, we never state specific dollar amounts or percentages as fact. Instead, we confirm your benefits directly with Anthem and explain them in clear, plain language.</p><h2>Verify Your Anthem Benefits for Free</h2><p>The clearest way to understand your Anthem coverage is to let our team check it for you. Our <a href="/verify-insurance">free benefits verification</a> is quick and fully confidential under HIPAA and 42 CFR Part 2. This page offers general information and is not a guarantee of coverage; your benefits depend on your plan and are confirmed through verification. Call <strong>213-321-6518</strong> today.</p>
 </div></section>
 <section class="faq-bg" id="faq-section"><div class="container"><div class="section-label">Frequently Asked Questions</div><h2>Frequently Asked Questions</h2><div class="faq-list">

@@ -179,25 +179,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f2d4a;
-  --blue: #1a5fa8;
-  --blue-dark: #134880;
-  --sky: #e6f0fb;
-  --gold: #c07c18;
-  --gold-light: #f0a030;
+  /* California Treatment Centers — LUXURY palette: deep emerald + champagne gold + ivory */
+  --navy: #14302a;        /* deep emerald (nav, footer, headings) */
+  --blue: #3f6f60;        /* muted sage accent (links, labels) */
+  --blue-dark: #0f221d;
+  --sky: #eef1ea;         /* soft ivory-sage */
+  --gold: #b0914e;        /* champagne / brushed gold (primary accent) */
+  --gold-light: #cca967;  /* lighter gold (hover, logo accent) */
   --white: #fff;
-  --gray: #f4f6f9;
-  --text: #1a2433;
-  --muted: #536070;
-  --border: #d8e2ee;
-  --green: #156b3a;
-  --red-bar: #6b1010;
+  --gray: #f4f0e6;        /* warm ivory section bg */
+  --text: #20211c;        /* near-black warm */
+  --muted: #6f6a5c;
+  --border: #e7e0d0;      /* ivory border */
+  --green: #1d6b4f;
+  --red-bar: #4f2a1a;     /* understated crisis bar */
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.65; font-size: 16px; }
+body { font-family: 'Helvetica Neue', 'Inter', system-ui, -apple-system, Arial, sans-serif; color: var(--text); line-height: 1.72; font-size: 16px; background: #faf8f1; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ── CA LUXURY THEME: refined serif, champagne gold, generous whitespace ── */
+h1, h2, h3, .logo { font-family: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif; }
+h1 { font-weight: 600; letter-spacing: -.3px; line-height: 1.1; }
+h2 { color: var(--navy); font-weight: 600; }
+.section-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: .68rem; }
+/* elegant gold underline under the eyebrow label */
+.section-label::after { content: ""; display: block; width: 38px; height: 2px; background: var(--gold); margin-top: .6rem; opacity: .8; }
+/* refined rectangular gold CTAs (not bubbly) */
+.btn-primary, .submit-btn, .mobile-cta { background: var(--gold) !important; color: #20211c !important; border-radius: 4px !important; letter-spacing: 1.2px; text-transform: uppercase; font-size: .82rem !important; font-weight: 700; box-shadow: 0 6px 20px rgba(176,145,78,.25); }
+.btn-primary:hover, .submit-btn:hover { background: var(--gold-light) !important; }
+.nav-cta { background: transparent !important; color: var(--gold-light) !important; border: 1px solid var(--gold-light); border-radius: 4px !important; letter-spacing: .6px; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.card { border-radius: 8px; border: 1px solid var(--border); background: #fff; box-shadow: 0 2px 14px rgba(20,48,42,.05); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,48,42,.12); border-color: var(--gold-light); }
+.dropdown, .hero-card { border-radius: 10px; }
+.hero-card { border-top: 3px solid var(--gold); }
+nav { background: var(--navy); box-shadow: 0 1px 0 rgba(204,169,103,.25); }
+.logo span { color: var(--gold-light); }
+.logo { letter-spacing: .3px; }
+section { padding: 100px 0; }            /* generous luxury whitespace */
+.hero { background: linear-gradient(165deg, #faf8f1 0%, #eef1ea 100%); }
+.faq-bg { background: var(--gray); }
+.verify-section { border-top: 1px solid var(--border); }
+/* thin gold rule above the footer for a finished, premium edge */
+footer { border-top: 3px solid var(--gold); }
 
 /* ── CRISIS BAR ── */
 .crisis-bar { background: var(--red-bar); color: var(--white); text-align: center; padding: .55rem 5%; font-size: .84rem; font-weight: 600; }
@@ -669,7 +696,7 @@ p, li, h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
   <a href="mailto:support@alumniaidservices.com">&#9993; support@alumniaidservices.com</a>
   <a href="tel:2133216518" class="mobile-cta">&#128222; 213-321-6518</a>
 </div>
-<section><div class="container"><div class="section-label">Shasta County / Far Northern California</div><h1>Drug & Alcohol Rehab in Redding, California</h1><img src="/images/hero-recovery.svg" alt="Calm, supportive drug and alcohol rehab setting in California — California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
+<section><div class="container"><div class="section-label">Shasta County / Far Northern California</div><h1>Drug & Alcohol Rehab in Redding, California</h1><img src="/images/california-rehab-near-you.svg" alt="Drug &amp; Alcohol Rehab in Redding, California | California Treatment Centers" title="Drug &amp; Alcohol Rehab in Redding, California" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
 <p>Redding, the largest city in far Northern California, anchors Shasta County at the northern end of the Sacramento Valley. Its rural setting and distance from major metro areas can make finding specialized addiction treatment a genuine challenge. California Treatment Centers serves Redding and the surrounding area, helping residents bridge that gap and connect to appropriate, evidence-informed care.</p><p>As a statewide provider with multiple real California locations, we help Redding-area clients verify insurance, identify the right level of care, and arrange placement or travel when local options are limited or when a change of setting supports recovery.</p><h2>How We Help Redding Residents</h2><p>Care should fit the person. After a clinical assessment, we help match each individual to an appropriate level of care.</p><div class="card-grid-4"><div><h3>Detox</h3><p><a href="/medical-detox">Medical detox</a> offers supervised support through withdrawal.</p></div><div><h3>Residential</h3><p><a href="/residential-treatment">Residential treatment</a> provides a structured, live-in environment.</p></div><div><h3>PHP & IOP</h3><p>Day treatment and intensive outpatient balance structure with daily life.</p></div><div><h3>Outpatient</h3><p><a href="/outpatient-treatment">Outpatient care</a> and aftercare support lasting recovery.</p></div></div><h2>Far Northern California Context</h2><p>Redding sits near Anderson, Red Bluff, Shasta Lake and the gateway to Mount Shasta, with Chico and Sacramento well to the south. Rural distances and a limited number of local specialized programs are real barriers for many families here. Because California Treatment Centers operates throughout the state, we can broaden the options available, including programs in other regions, and help coordinate travel when needed.</p><h2>Levels of Care</h2><ul><li>Medical detox and withdrawal management</li><li>Residential / inpatient treatment</li><li>Partial hospitalization (PHP)</li><li>Intensive outpatient (IOP)</li><li>Standard outpatient and aftercare</li><li>Sober living and recovery housing</li><li>Sober companionship</li></ul><h2>What Happens When You Call</h2><p>For families in far Northern California, distance and limited local options can make getting help feel out of reach. Our admissions team starts with a confidential conversation about your situation, the substances involved, any prior treatment, and medical or mental-health history, then explains realistic options, including how travel and placement work when local programs are full. There is no pressure and no judgment, just clear information.</p><h3>Support for Families</h3><p>Family members often shoulder a heavy load in rural communities. We can explain the stages of care, from detox through aftercare, and how sober living and ongoing support help protect recovery after a structured program ends.</p><h2>Insurance & Verification</h2><p>California Treatment Centers is in-network with most major insurers. Our free, confidential verification clarifies your likely coverage before you commit. <a href="/verify-insurance">Verify your insurance</a> with no obligation.</p><h2>Getting Started</h2><p>A phone call is a confidential first step, not a commitment. Call <strong>213-321-6518</strong> to speak with our admissions team about options for you or a loved one. You can also explore our <a href="/california-rehab-locations">California locations</a> to see how we serve the state. If you or someone you love is in crisis, call or text 988 to reach the Suicide & Crisis Lifeline anytime.</p>
 </div></section>
 <section class="faq-bg" id="faq-section"><div class="container"><div class="section-label">Frequently Asked Questions</div><h2>Frequently Asked Questions</h2><div class="faq-list">

@@ -179,25 +179,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f2d4a;
-  --blue: #1a5fa8;
-  --blue-dark: #134880;
-  --sky: #e6f0fb;
-  --gold: #c07c18;
-  --gold-light: #f0a030;
+  /* California Treatment Centers — LUXURY palette: deep emerald + champagne gold + ivory */
+  --navy: #14302a;        /* deep emerald (nav, footer, headings) */
+  --blue: #3f6f60;        /* muted sage accent (links, labels) */
+  --blue-dark: #0f221d;
+  --sky: #eef1ea;         /* soft ivory-sage */
+  --gold: #b0914e;        /* champagne / brushed gold (primary accent) */
+  --gold-light: #cca967;  /* lighter gold (hover, logo accent) */
   --white: #fff;
-  --gray: #f4f6f9;
-  --text: #1a2433;
-  --muted: #536070;
-  --border: #d8e2ee;
-  --green: #156b3a;
-  --red-bar: #6b1010;
+  --gray: #f4f0e6;        /* warm ivory section bg */
+  --text: #20211c;        /* near-black warm */
+  --muted: #6f6a5c;
+  --border: #e7e0d0;      /* ivory border */
+  --green: #1d6b4f;
+  --red-bar: #4f2a1a;     /* understated crisis bar */
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.65; font-size: 16px; }
+body { font-family: 'Helvetica Neue', 'Inter', system-ui, -apple-system, Arial, sans-serif; color: var(--text); line-height: 1.72; font-size: 16px; background: #faf8f1; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ── CA LUXURY THEME: refined serif, champagne gold, generous whitespace ── */
+h1, h2, h3, .logo { font-family: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif; }
+h1 { font-weight: 600; letter-spacing: -.3px; line-height: 1.1; }
+h2 { color: var(--navy); font-weight: 600; }
+.section-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: .68rem; }
+/* elegant gold underline under the eyebrow label */
+.section-label::after { content: ""; display: block; width: 38px; height: 2px; background: var(--gold); margin-top: .6rem; opacity: .8; }
+/* refined rectangular gold CTAs (not bubbly) */
+.btn-primary, .submit-btn, .mobile-cta { background: var(--gold) !important; color: #20211c !important; border-radius: 4px !important; letter-spacing: 1.2px; text-transform: uppercase; font-size: .82rem !important; font-weight: 700; box-shadow: 0 6px 20px rgba(176,145,78,.25); }
+.btn-primary:hover, .submit-btn:hover { background: var(--gold-light) !important; }
+.nav-cta { background: transparent !important; color: var(--gold-light) !important; border: 1px solid var(--gold-light); border-radius: 4px !important; letter-spacing: .6px; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.card { border-radius: 8px; border: 1px solid var(--border); background: #fff; box-shadow: 0 2px 14px rgba(20,48,42,.05); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,48,42,.12); border-color: var(--gold-light); }
+.dropdown, .hero-card { border-radius: 10px; }
+.hero-card { border-top: 3px solid var(--gold); }
+nav { background: var(--navy); box-shadow: 0 1px 0 rgba(204,169,103,.25); }
+.logo span { color: var(--gold-light); }
+.logo { letter-spacing: .3px; }
+section { padding: 100px 0; }            /* generous luxury whitespace */
+.hero { background: linear-gradient(165deg, #faf8f1 0%, #eef1ea 100%); }
+.faq-bg { background: var(--gray); }
+.verify-section { border-top: 1px solid var(--border); }
+/* thin gold rule above the footer for a finished, premium edge */
+footer { border-top: 3px solid var(--gold); }
 
 /* ── CRISIS BAR ── */
 .crisis-bar { background: var(--red-bar); color: var(--white); text-align: center; padding: .55rem 5%; font-size: .84rem; font-weight: 600; }
@@ -669,7 +696,7 @@ p, li, h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
   <a href="mailto:support@alumniaidservices.com">&#9993; support@alumniaidservices.com</a>
   <a href="tel:2133216518" class="mobile-cta">&#128222; 213-321-6518</a>
 </div>
-<section><div class="container"><div class="section-label">What We Treat</div><h1>Fentanyl Addiction Treatment in California</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/hero-recovery.svg" alt="Calm, supportive drug and alcohol rehab setting in California — California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
+<section><div class="container"><div class="section-label">What We Treat</div><h1>Fentanyl Addiction Treatment in California</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/california-drug-alcohol-rehab.svg" alt="Fentanyl Addiction Treatment in California | California Treatment Centers" title="Fentanyl Addiction Treatment in California" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
 <p>Fentanyl has changed the landscape of addiction. As a synthetic opioid many times stronger than heroin, it carries an extreme risk of overdose, often in people who didn't even know they were taking it. At California Treatment Centers, we provide urgent, compassionate, evidence-based care for fentanyl use disorder at locations across California.</p><h2>Why Fentanyl Is So Dangerous</h2><p>Fentanyl is a powerful synthetic opioid. Because it is so potent, a very small amount can cause a fatal overdose, and it is now frequently mixed into other drugs, including counterfeit pills, heroin, cocaine, and methamphetamine. Many people are exposed without their knowledge. This unpredictability is why fentanyl is involved in so many accidental overdose deaths.</p><h2>Recognizing the Signs</h2><ul><li>Cravings and loss of control over use</li><li>Withdrawal symptoms within hours of the last dose</li><li>Using counterfeit or street pills of unknown origin</li><li>Drowsiness, slowed breathing, or pinpoint pupils after use</li><li>Continued use despite overdoses or near-misses</li></ul><h2>Overdose: Know the Risk</h2><p>Fentanyl overdose can stop breathing in minutes. Naloxone (Narcan) can reverse an opioid overdose, but because fentanyl is so strong, more than one dose may be needed. If you suspect an overdose, call 911 right away and administer naloxone if available. Keeping naloxone accessible can save a life.</p><h2>Detox Tailored to Fentanyl</h2><p>Fentanyl's potency and how it stores in the body can make withdrawal feel especially intense and prolonged. Attempting to quit alone is both miserable and dangerous, because relapse after a period of abstinence sharply raises overdose risk. Our <a href="/medical-detox">medical detox</a> program provides 24/7 monitoring and medications to ease withdrawal safely.</p><h2>Medication-Assisted Treatment Saves Lives</h2><p>For fentanyl and other opioids, <a href="/medication-assisted-treatment">medication-assisted treatment</a> (MAT) is a proven, evidence-based approach. Medications such as buprenorphine or methadone reduce cravings and withdrawal and lower the risk of fatal overdose. We pair MAT with counseling so you heal physically and emotionally.</p><div class="card-grid-4"><div class="card"><h3>Medical Detox</h3><p>Supervised, medication-supported withdrawal designed for fentanyl's intensity.</p></div><div class="card"><h3>MAT</h3><p>Evidence-based medications to curb cravings and reduce overdose risk.</p></div><div class="card"><h3>Residential Treatment</h3><p>Safe, structured care away from access and triggers.</p></div><div class="card"><h3>Outpatient Treatment</h3><p>Ongoing support and accountability as you rebuild your life.</p></div></div><h2>A Continuum of Care</h2><p>After detox, many clients move into <a href="/residential-treatment">residential treatment</a> for focused, distraction-free recovery before stepping down to flexible outpatient care. Throughout, we use therapy, relapse-prevention planning, and peer support to address the roots of addiction.</p><h2>Getting Started</h2><p>With fentanyl, every day matters. We are in-network with most major insurers, and insurance verification is free and confidential. Our admissions team can move quickly to get you or your loved one into care. Reach out now, because the sooner treatment begins, the sooner the risk of another overdose drops, and our admissions team is ready to help you start without delay.</p><p>If you are in crisis, call or text 988. The free SAMHSA National Helpline at 1-800-662-4357 is available 24/7.</p>
 </div></section>
 <section class="faq-bg" id="faq-section"><div class="container"><div class="section-label">Frequently Asked Questions</div><h2>Frequently Asked Questions</h2><div class="faq-list">

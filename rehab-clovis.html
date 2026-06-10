@@ -179,25 +179,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f2d4a;
-  --blue: #1a5fa8;
-  --blue-dark: #134880;
-  --sky: #e6f0fb;
-  --gold: #c07c18;
-  --gold-light: #f0a030;
+  /* California Treatment Centers — LUXURY palette: deep emerald + champagne gold + ivory */
+  --navy: #14302a;        /* deep emerald (nav, footer, headings) */
+  --blue: #3f6f60;        /* muted sage accent (links, labels) */
+  --blue-dark: #0f221d;
+  --sky: #eef1ea;         /* soft ivory-sage */
+  --gold: #b0914e;        /* champagne / brushed gold (primary accent) */
+  --gold-light: #cca967;  /* lighter gold (hover, logo accent) */
   --white: #fff;
-  --gray: #f4f6f9;
-  --text: #1a2433;
-  --muted: #536070;
-  --border: #d8e2ee;
-  --green: #156b3a;
-  --red-bar: #6b1010;
+  --gray: #f4f0e6;        /* warm ivory section bg */
+  --text: #20211c;        /* near-black warm */
+  --muted: #6f6a5c;
+  --border: #e7e0d0;      /* ivory border */
+  --green: #1d6b4f;
+  --red-bar: #4f2a1a;     /* understated crisis bar */
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.65; font-size: 16px; }
+body { font-family: 'Helvetica Neue', 'Inter', system-ui, -apple-system, Arial, sans-serif; color: var(--text); line-height: 1.72; font-size: 16px; background: #faf8f1; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ── CA LUXURY THEME: refined serif, champagne gold, generous whitespace ── */
+h1, h2, h3, .logo { font-family: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif; }
+h1 { font-weight: 600; letter-spacing: -.3px; line-height: 1.1; }
+h2 { color: var(--navy); font-weight: 600; }
+.section-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: .68rem; }
+/* elegant gold underline under the eyebrow label */
+.section-label::after { content: ""; display: block; width: 38px; height: 2px; background: var(--gold); margin-top: .6rem; opacity: .8; }
+/* refined rectangular gold CTAs (not bubbly) */
+.btn-primary, .submit-btn, .mobile-cta { background: var(--gold) !important; color: #20211c !important; border-radius: 4px !important; letter-spacing: 1.2px; text-transform: uppercase; font-size: .82rem !important; font-weight: 700; box-shadow: 0 6px 20px rgba(176,145,78,.25); }
+.btn-primary:hover, .submit-btn:hover { background: var(--gold-light) !important; }
+.nav-cta { background: transparent !important; color: var(--gold-light) !important; border: 1px solid var(--gold-light); border-radius: 4px !important; letter-spacing: .6px; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.card { border-radius: 8px; border: 1px solid var(--border); background: #fff; box-shadow: 0 2px 14px rgba(20,48,42,.05); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,48,42,.12); border-color: var(--gold-light); }
+.dropdown, .hero-card { border-radius: 10px; }
+.hero-card { border-top: 3px solid var(--gold); }
+nav { background: var(--navy); box-shadow: 0 1px 0 rgba(204,169,103,.25); }
+.logo span { color: var(--gold-light); }
+.logo { letter-spacing: .3px; }
+section { padding: 100px 0; }            /* generous luxury whitespace */
+.hero { background: linear-gradient(165deg, #faf8f1 0%, #eef1ea 100%); }
+.faq-bg { background: var(--gray); }
+.verify-section { border-top: 1px solid var(--border); }
+/* thin gold rule above the footer for a finished, premium edge */
+footer { border-top: 3px solid var(--gold); }
 
 /* ── CRISIS BAR ── */
 .crisis-bar { background: var(--red-bar); color: var(--white); text-align: center; padding: .55rem 5%; font-size: .84rem; font-weight: 600; }
@@ -669,7 +696,7 @@ p, li, h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
   <a href="mailto:support@alumniaidservices.com">&#9993; support@alumniaidservices.com</a>
   <a href="tel:2133216518" class="mobile-cta">&#128222; 213-321-6518</a>
 </div>
-<section><div class="container"><div class="section-label">Fresno County / Central Valley</div><h1>Drug & Alcohol Rehab in Clovis, California</h1><img src="/images/hero-recovery.svg" alt="Calm, supportive drug and alcohol rehab setting in California — California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
+<section><div class="container"><div class="section-label">Fresno County / Central Valley</div><h1>Drug & Alcohol Rehab in Clovis, California</h1><img src="/images/california-rehab-near-you.svg" alt="Drug &amp; Alcohol Rehab in Clovis, California | California Treatment Centers" title="Drug &amp; Alcohol Rehab in Clovis, California" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
 <p>Clovis, the "Gateway to the Sierras" just northeast of Fresno, is a community known for its family-oriented neighborhoods and strong local identity. Even in close-knit places, addiction touches families quietly, and the desire for privacy can make reaching out harder. California Treatment Centers serves Clovis and the surrounding area with discreet, professional guidance toward the right level of addiction care.</p><p>As a statewide provider with multiple real California locations, we help Clovis-area clients verify insurance, choose an appropriate level of care, and, when it helps, arrange placement or travel away from familiar surroundings.</p><h2>How We Help Clovis Residents</h2><p>After a confidential clinical assessment, we connect each person to care matched to their needs and history.</p><div class="card-grid-4"><div><h3>Detox</h3><p><a href="/medical-detox">Medical detox</a> provides supervised support through withdrawal from alcohol, opioids and other substances.</p></div><div><h3>Residential</h3><p><a href="/residential-treatment">Residential treatment</a> offers a structured, supportive environment for deeper work.</p></div><div><h3>PHP & IOP</h3><p>Day treatment and intensive outpatient programs balance structure with flexibility.</p></div><div><h3>Outpatient</h3><p><a href="/outpatient-treatment">Outpatient care</a> and aftercare help sustain progress over time.</p></div></div><h2>Discretion in a Tight-Knit Community</h2><p>In a city the size of Clovis, many people worry about running into someone they know. Treatment away from your immediate area can offer added privacy, and because we operate across California, stepping outside the Fresno metro for residential care is a realistic option for those who want it. We also coordinate sober living and sober companionship for ongoing support.</p><h2>Levels of Care</h2><ul><li>Medical detox and withdrawal management</li><li>Residential / inpatient treatment</li><li>Partial hospitalization (PHP)</li><li>Intensive outpatient (IOP)</li><li>Standard outpatient and aftercare</li><li>Sober living and recovery housing</li><li>Sober companionship</li></ul><h2>What Happens When You Call</h2><p>Reaching out is often the hardest step, and we try to make it the simplest. A confidential call with our admissions team begins with listening: what is going on, which substances are involved, what has been tried before, and any health or mental-health concerns. From there we explain options clearly and without pressure. For Clovis families who value privacy, we can talk through how treatment outside the immediate area works and what travel or placement might look like.</p><h3>Supporting the Whole Family</h3><p>Recovery rarely happens in isolation. We can help loved ones understand the stages of treatment, from detox through aftercare, and how sober living and ongoing support help protect early progress after a structured program ends.</p><h2>Insurance & Verification</h2><p>California Treatment Centers is in-network with most major insurers. Our free, confidential verification clarifies your likely coverage before you decide anything. <a href="/verify-insurance">Verify your insurance</a> with no obligation.</p><h2>Take the First Step</h2><p>A phone call costs nothing and commits you to nothing. Call <strong>213-321-6518</strong> to speak privately with our admissions team about options for you or someone you love. You can also review our <a href="/california-rehab-locations">California locations</a> to see how we serve the state. In a crisis, call or text 988 for the Suicide & Crisis Lifeline anytime.</p>
 </div></section>
 <section class="faq-bg" id="faq-section"><div class="container"><div class="section-label">Frequently Asked Questions</div><h2>Frequently Asked Questions</h2><div class="faq-list">

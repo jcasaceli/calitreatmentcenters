@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="Luxury California addiction recovery setting at sunrise">
+  <defs>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f221d"/><stop offset=".55" stop-color="#2f5d4e"/><stop offset="1" stop-color="#eef1ea"/></linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cca967"/><stop offset="1" stop-color="#b0914e"/></linearGradient>
+  </defs>
+  <rect width="1200" height="420" fill="url(#s)"/>
+  <circle cx="600" cy="300" r="118" fill="url(#sun)" opacity=".95"/>
+  <path d="M0 332 Q300 286 600 332 T1200 332 V420 H0 Z" fill="#14302a" opacity=".55"/>
+  <path d="M0 362 Q300 326 600 362 T1200 362 V420 H0 Z" fill="#0f221d" opacity=".7"/>
+</svg>

@@ -179,25 +179,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f2d4a;
-  --blue: #1a5fa8;
-  --blue-dark: #134880;
-  --sky: #e6f0fb;
-  --gold: #c07c18;
-  --gold-light: #f0a030;
+  /* California Treatment Centers — LUXURY palette: deep emerald + champagne gold + ivory */
+  --navy: #14302a;        /* deep emerald (nav, footer, headings) */
+  --blue: #3f6f60;        /* muted sage accent (links, labels) */
+  --blue-dark: #0f221d;
+  --sky: #eef1ea;         /* soft ivory-sage */
+  --gold: #b0914e;        /* champagne / brushed gold (primary accent) */
+  --gold-light: #cca967;  /* lighter gold (hover, logo accent) */
   --white: #fff;
-  --gray: #f4f6f9;
-  --text: #1a2433;
-  --muted: #536070;
-  --border: #d8e2ee;
-  --green: #156b3a;
-  --red-bar: #6b1010;
+  --gray: #f4f0e6;        /* warm ivory section bg */
+  --text: #20211c;        /* near-black warm */
+  --muted: #6f6a5c;
+  --border: #e7e0d0;      /* ivory border */
+  --green: #1d6b4f;
+  --red-bar: #4f2a1a;     /* understated crisis bar */
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.65; font-size: 16px; }
+body { font-family: 'Helvetica Neue', 'Inter', system-ui, -apple-system, Arial, sans-serif; color: var(--text); line-height: 1.72; font-size: 16px; background: #faf8f1; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ── CA LUXURY THEME: refined serif, champagne gold, generous whitespace ── */
+h1, h2, h3, .logo { font-family: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif; }
+h1 { font-weight: 600; letter-spacing: -.3px; line-height: 1.1; }
+h2 { color: var(--navy); font-weight: 600; }
+.section-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: .68rem; }
+/* elegant gold underline under the eyebrow label */
+.section-label::after { content: ""; display: block; width: 38px; height: 2px; background: var(--gold); margin-top: .6rem; opacity: .8; }
+/* refined rectangular gold CTAs (not bubbly) */
+.btn-primary, .submit-btn, .mobile-cta { background: var(--gold) !important; color: #20211c !important; border-radius: 4px !important; letter-spacing: 1.2px; text-transform: uppercase; font-size: .82rem !important; font-weight: 700; box-shadow: 0 6px 20px rgba(176,145,78,.25); }
+.btn-primary:hover, .submit-btn:hover { background: var(--gold-light) !important; }
+.nav-cta { background: transparent !important; color: var(--gold-light) !important; border: 1px solid var(--gold-light); border-radius: 4px !important; letter-spacing: .6px; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.card { border-radius: 8px; border: 1px solid var(--border); background: #fff; box-shadow: 0 2px 14px rgba(20,48,42,.05); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,48,42,.12); border-color: var(--gold-light); }
+.dropdown, .hero-card { border-radius: 10px; }
+.hero-card { border-top: 3px solid var(--gold); }
+nav { background: var(--navy); box-shadow: 0 1px 0 rgba(204,169,103,.25); }
+.logo span { color: var(--gold-light); }
+.logo { letter-spacing: .3px; }
+section { padding: 100px 0; }            /* generous luxury whitespace */
+.hero { background: linear-gradient(165deg, #faf8f1 0%, #eef1ea 100%); }
+.faq-bg { background: var(--gray); }
+.verify-section { border-top: 1px solid var(--border); }
+/* thin gold rule above the footer for a finished, premium edge */
+footer { border-top: 3px solid var(--gold); }
 
 /* ── CRISIS BAR ── */
 .crisis-bar { background: var(--red-bar); color: var(--white); text-align: center; padding: .55rem 5%; font-size: .84rem; font-weight: 600; }
@@ -669,7 +696,7 @@ p, li, h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
   <a href="mailto:support@alumniaidservices.com">&#9993; support@alumniaidservices.com</a>
   <a href="tel:2133216518" class="mobile-cta">&#128222; 213-321-6518</a>
 </div>
-<section><div class="container"><div class="section-label">What We Treat</div><h1>Cocaine Addiction Treatment in California</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/hero-recovery.svg" alt="Calm, supportive drug and alcohol rehab setting in California — California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
+<section><div class="container"><div class="section-label">What We Treat</div><h1>Cocaine Addiction Treatment in California</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/california-drug-alcohol-rehab.svg" alt="Cocaine Addiction Treatment in California | California Treatment Centers" title="Cocaine Addiction Treatment in California" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
 <p>Cocaine addiction can escalate quickly, taking a heavy toll on the heart, the mind, and every relationship in a person's life. At California Treatment Centers, we offer caring, evidence-based treatment for cocaine and crack cocaine use disorder at multiple locations throughout California. Recovery is possible, and we are here to help you build it.</p><h2>How Cocaine Affects the Body and Mind</h2><p>Cocaine is a powerful stimulant that floods the brain with dopamine, producing a short, intense high followed by a crash. This cycle can drive compulsive use and rapid dependence. Over time, cocaine strains the cardiovascular system and can lead to serious health problems. Signs of cocaine use disorder include:</p><ul><li>Using more and more to chase the same high (tolerance)</li><li>Binge patterns followed by deep crashes</li><li>Intense cravings and inability to cut back</li><li>Mood swings, paranoia, anxiety, or irritability</li><li>Financial, legal, or relationship problems tied to use</li><li>Neglecting responsibilities and self-care</li></ul><h2>What Withdrawal Looks Like</h2><p>Unlike alcohol or benzodiazepines, cocaine withdrawal is not typically physically life-threatening, but it can be psychologically brutal. People often experience exhaustion, intense cravings, depression, agitation, and in some cases suicidal thoughts. Because that emotional crash can be dangerous, supervised support matters. Our <a href="/medical-detox">medical detox</a> and stabilization services provide a safe, monitored environment during this vulnerable period.</p><h2>How We Treat Cocaine Addiction</h2><p>There is no specific medication approved to treat cocaine addiction, which makes behavioral therapy the cornerstone of effective care. We use proven approaches that help you understand triggers, change patterns, and build a life that doesn't revolve around using.</p><div class="card-grid-4"><div class="card"><h3>Stabilization</h3><p>A safe, supervised setting to manage the crash and protect your wellbeing.</p></div><div class="card"><h3>Residential Treatment</h3><p>Immersive care that removes you from triggers during early recovery.</p></div><div class="card"><h3>Outpatient Treatment</h3><p>Flexible programs that support recovery while you work or study.</p></div><div class="card"><h3>Therapy &amp; Skills</h3><p>CBT, contingency management, and relapse-prevention planning.</p></div></div><p>Many clients benefit from beginning in residential treatment and then transitioning to <a href="/outpatient-treatment">outpatient treatment</a> as they grow more confident in their recovery. Throughout, we draw on cognitive behavioral therapy, motivational interviewing, contingency management, and group support.</p><h2>Treating the Whole Person</h2><p>Cocaine use often coexists with depression, anxiety, ADHD, or trauma, and sometimes with alcohol or other drug use. Our integrated <a href="/dual-diagnosis-treatment">dual diagnosis</a> care treats these conditions together, addressing the underlying drivers of use rather than the symptoms alone.</p><h2>Getting Started</h2><p>We are in-network with most major insurers, and verifying your benefits is free and confidential. Our admissions team can answer your questions and help you choose the right level of care. Reach out today and take the first step, and our team will support you through detox, therapy, and the relapse-prevention skills that make recovery last.</p><p>If you or someone you love is in crisis, call or text 988. The free SAMHSA National Helpline at 1-800-662-4357 is available 24/7.</p>
 </div></section>
 <section class="faq-bg" id="faq-section"><div class="container"><div class="section-label">Frequently Asked Questions</div><h2>Frequently Asked Questions</h2><div class="faq-list">

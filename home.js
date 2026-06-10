@@ -22,7 +22,7 @@ module.exports = {
         <a href="tel:${TEL}" class="btn-primary">Call ${PHONE}</a>
         <a href="#verify-section" class="btn-secondary" onclick="scrollSec('verify-section');return false;">Verify Insurance Free</a>
       </div>
-      <img src="/images/hero-recovery.svg" alt="Calm California sunrise representing a fresh start in addiction recovery with California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin-top:1.6rem"/>
+      <img src="/images/california-drug-alcohol-rehab.svg" alt="Luxury California drug and alcohol treatment — detox, residential and outpatient care | California Treatment Centers" title="California Drug & Alcohol Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:10px;margin-top:1.6rem"/>
     </div>
     <div class="hero-card">
       <h3 style="margin-bottom:.6rem">Free Benefits Check</h3>

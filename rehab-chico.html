@@ -179,25 +179,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f2d4a;
-  --blue: #1a5fa8;
-  --blue-dark: #134880;
-  --sky: #e6f0fb;
-  --gold: #c07c18;
-  --gold-light: #f0a030;
+  /* California Treatment Centers — LUXURY palette: deep emerald + champagne gold + ivory */
+  --navy: #14302a;        /* deep emerald (nav, footer, headings) */
+  --blue: #3f6f60;        /* muted sage accent (links, labels) */
+  --blue-dark: #0f221d;
+  --sky: #eef1ea;         /* soft ivory-sage */
+  --gold: #b0914e;        /* champagne / brushed gold (primary accent) */
+  --gold-light: #cca967;  /* lighter gold (hover, logo accent) */
   --white: #fff;
-  --gray: #f4f6f9;
-  --text: #1a2433;
-  --muted: #536070;
-  --border: #d8e2ee;
-  --green: #156b3a;
-  --red-bar: #6b1010;
+  --gray: #f4f0e6;        /* warm ivory section bg */
+  --text: #20211c;        /* near-black warm */
+  --muted: #6f6a5c;
+  --border: #e7e0d0;      /* ivory border */
+  --green: #1d6b4f;
+  --red-bar: #4f2a1a;     /* understated crisis bar */
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.65; font-size: 16px; }
+body { font-family: 'Helvetica Neue', 'Inter', system-ui, -apple-system, Arial, sans-serif; color: var(--text); line-height: 1.72; font-size: 16px; background: #faf8f1; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ── CA LUXURY THEME: refined serif, champagne gold, generous whitespace ── */
+h1, h2, h3, .logo { font-family: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif; }
+h1 { font-weight: 600; letter-spacing: -.3px; line-height: 1.1; }
+h2 { color: var(--navy); font-weight: 600; }
+.section-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: .68rem; }
+/* elegant gold underline under the eyebrow label */
+.section-label::after { content: ""; display: block; width: 38px; height: 2px; background: var(--gold); margin-top: .6rem; opacity: .8; }
+/* refined rectangular gold CTAs (not bubbly) */
+.btn-primary, .submit-btn, .mobile-cta { background: var(--gold) !important; color: #20211c !important; border-radius: 4px !important; letter-spacing: 1.2px; text-transform: uppercase; font-size: .82rem !important; font-weight: 700; box-shadow: 0 6px 20px rgba(176,145,78,.25); }
+.btn-primary:hover, .submit-btn:hover { background: var(--gold-light) !important; }
+.nav-cta { background: transparent !important; color: var(--gold-light) !important; border: 1px solid var(--gold-light); border-radius: 4px !important; letter-spacing: .6px; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.card { border-radius: 8px; border: 1px solid var(--border); background: #fff; box-shadow: 0 2px 14px rgba(20,48,42,.05); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,48,42,.12); border-color: var(--gold-light); }
+.dropdown, .hero-card { border-radius: 10px; }
+.hero-card { border-top: 3px solid var(--gold); }
+nav { background: var(--navy); box-shadow: 0 1px 0 rgba(204,169,103,.25); }
+.logo span { color: var(--gold-light); }
+.logo { letter-spacing: .3px; }
+section { padding: 100px 0; }            /* generous luxury whitespace */
+.hero { background: linear-gradient(165deg, #faf8f1 0%, #eef1ea 100%); }
+.faq-bg { background: var(--gray); }
+.verify-section { border-top: 1px solid var(--border); }
+/* thin gold rule above the footer for a finished, premium edge */
+footer { border-top: 3px solid var(--gold); }
 
 /* ── CRISIS BAR ── */
 .crisis-bar { background: var(--red-bar); color: var(--white); text-align: center; padding: .55rem 5%; font-size: .84rem; font-weight: 600; }
@@ -669,7 +696,7 @@ p, li, h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
   <a href="mailto:support@alumniaidservices.com">&#9993; support@alumniaidservices.com</a>
   <a href="tel:2133216518" class="mobile-cta">&#128222; 213-321-6518</a>
 </div>
-<section><div class="container"><div class="section-label">Butte County / Northern California</div><h1>Drug & Alcohol Rehab in Chico, California</h1><img src="/images/hero-recovery.svg" alt="Calm, supportive drug and alcohol rehab setting in California — California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
+<section><div class="container"><div class="section-label">Butte County / Northern California</div><h1>Drug & Alcohol Rehab in Chico, California</h1><img src="/images/california-rehab-near-you.svg" alt="Drug &amp; Alcohol Rehab in Chico, California | California Treatment Centers" title="Drug &amp; Alcohol Rehab in Chico, California" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
 <p>Chico anchors Butte County in Northern California's northern Sacramento Valley, a college town shaped by California State University, Chico and by the lasting impact of the nearby Camp Fire. A strong student social scene and ongoing community recovery from disaster both color the local picture around alcohol and substance use. California Treatment Centers serves Chico and the surrounding area, guiding residents toward appropriate, evidence-informed care.</p><p>As a statewide provider with multiple real California locations, we help Chico-area clients verify insurance, choose a level of care, and arrange placement or travel when it supports recovery.</p><h2>Care That Fits the Individual</h2><p>Recovery is not one-size-fits-all. After a clinical assessment, we help connect each person to a level of care that suits their needs and history.</p><h3>Levels of Care We Coordinate</h3><ul><li><a href="/medical-detox">Medical detox</a> with supervised withdrawal management</li><li><a href="/residential-treatment">Residential treatment</a> in a structured, live-in setting</li><li>Partial hospitalization (PHP) for intensive daytime care</li><li>Intensive outpatient (IOP) around school and work</li><li>Standard <a href="/outpatient-treatment">outpatient treatment</a> and aftercare</li><li>Sober living and recovery housing</li><li>Sober companionship for one-on-one support</li></ul><h2>Northern California Context</h2><p>Chico sits near Paradise, Oroville, Durham and the broader Butte County region, with Redding to the north and Sacramento to the south. A prominent university culture means alcohol and party-related substance use are common, while the Camp Fire's aftermath continues to weigh on local mental health. Because we operate across California, we can offer both regional options and programs elsewhere when distance from a familiar environment helps.</p><h2>Substances of Concern</h2><p>Alcohol, stimulants and opioids, including fentanyl risks, are concerns across Northern California. Our clinical partners apply established, evidence-informed approaches and tailor each plan to the individual.</p><h2>What to Expect When You Reach Out</h2><p>The first call is confidential and pressure-free. Our admissions team listens to what is happening, asks about the substances involved, any prior treatment, and medical or mental-health concerns, then explains realistic options in plain language. For Chico students and residents, including those still carrying stress from the Camp Fire years, we work to find an approach that respects both privacy and real-life demands.</p><h3>Guidance for Families</h3><p>Loved ones often want to help but do not know where to begin. We can explain what detox and treatment involve, how the levels of care connect, and how aftercare and sober living support recovery once a structured program ends.</p><h2>Insurance & Cost</h2><p>California Treatment Centers is in-network with most major insurers. A free, confidential check clarifies your likely coverage before you decide. <a href="/verify-insurance">Verify your insurance</a> with no cost and no obligation.</p><h2>How to Begin</h2><p>The first call is just a conversation. Call <strong>213-321-6518</strong> to discuss your situation and explore options for yourself or a loved one. You can also view our <a href="/california-rehab-locations">California locations</a> to see how we serve the state. If you or someone you care about is in crisis, call or text 988 to reach the Suicide & Crisis Lifeline anytime.</p>
 </div></section>
 <section class="faq-bg" id="faq-section"><div class="container"><div class="section-label">Frequently Asked Questions</div><h2>Frequently Asked Questions</h2><div class="faq-list">

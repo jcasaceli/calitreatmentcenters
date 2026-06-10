@@ -179,25 +179,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0f2d4a;
-  --blue: #1a5fa8;
-  --blue-dark: #134880;
-  --sky: #e6f0fb;
-  --gold: #c07c18;
-  --gold-light: #f0a030;
+  /* California Treatment Centers — LUXURY palette: deep emerald + champagne gold + ivory */
+  --navy: #14302a;        /* deep emerald (nav, footer, headings) */
+  --blue: #3f6f60;        /* muted sage accent (links, labels) */
+  --blue-dark: #0f221d;
+  --sky: #eef1ea;         /* soft ivory-sage */
+  --gold: #b0914e;        /* champagne / brushed gold (primary accent) */
+  --gold-light: #cca967;  /* lighter gold (hover, logo accent) */
   --white: #fff;
-  --gray: #f4f6f9;
-  --text: #1a2433;
-  --muted: #536070;
-  --border: #d8e2ee;
-  --green: #156b3a;
-  --red-bar: #6b1010;
+  --gray: #f4f0e6;        /* warm ivory section bg */
+  --text: #20211c;        /* near-black warm */
+  --muted: #6f6a5c;
+  --border: #e7e0d0;      /* ivory border */
+  --green: #1d6b4f;
+  --red-bar: #4f2a1a;     /* understated crisis bar */
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.65; font-size: 16px; }
+body { font-family: 'Helvetica Neue', 'Inter', system-ui, -apple-system, Arial, sans-serif; color: var(--text); line-height: 1.72; font-size: 16px; background: #faf8f1; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+
+/* ── CA LUXURY THEME: refined serif, champagne gold, generous whitespace ── */
+h1, h2, h3, .logo { font-family: 'Georgia', 'Iowan Old Style', 'Times New Roman', serif; }
+h1 { font-weight: 600; letter-spacing: -.3px; line-height: 1.1; }
+h2 { color: var(--navy); font-weight: 600; }
+.section-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: .68rem; }
+/* elegant gold underline under the eyebrow label */
+.section-label::after { content: ""; display: block; width: 38px; height: 2px; background: var(--gold); margin-top: .6rem; opacity: .8; }
+/* refined rectangular gold CTAs (not bubbly) */
+.btn-primary, .submit-btn, .mobile-cta { background: var(--gold) !important; color: #20211c !important; border-radius: 4px !important; letter-spacing: 1.2px; text-transform: uppercase; font-size: .82rem !important; font-weight: 700; box-shadow: 0 6px 20px rgba(176,145,78,.25); }
+.btn-primary:hover, .submit-btn:hover { background: var(--gold-light) !important; }
+.nav-cta { background: transparent !important; color: var(--gold-light) !important; border: 1px solid var(--gold-light); border-radius: 4px !important; letter-spacing: .6px; }
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.card { border-radius: 8px; border: 1px solid var(--border); background: #fff; box-shadow: 0 2px 14px rgba(20,48,42,.05); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,48,42,.12); border-color: var(--gold-light); }
+.dropdown, .hero-card { border-radius: 10px; }
+.hero-card { border-top: 3px solid var(--gold); }
+nav { background: var(--navy); box-shadow: 0 1px 0 rgba(204,169,103,.25); }
+.logo span { color: var(--gold-light); }
+.logo { letter-spacing: .3px; }
+section { padding: 100px 0; }            /* generous luxury whitespace */
+.hero { background: linear-gradient(165deg, #faf8f1 0%, #eef1ea 100%); }
+.faq-bg { background: var(--gray); }
+.verify-section { border-top: 1px solid var(--border); }
+/* thin gold rule above the footer for a finished, premium edge */
+footer { border-top: 3px solid var(--gold); }
 
 /* ── CRISIS BAR ── */
 .crisis-bar { background: var(--red-bar); color: var(--white); text-align: center; padding: .55rem 5%; font-size: .84rem; font-weight: 600; }
@@ -669,7 +696,7 @@ p, li, h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
   <a href="mailto:support@alumniaidservices.com">&#9993; support@alumniaidservices.com</a>
   <a href="tel:2133216518" class="mobile-cta">&#128222; 213-321-6518</a>
 </div>
-<section><div class="container"><div class="section-label">Guide</div><h1>Does Insurance Cover Rehab in California?</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/hero-recovery.svg" alt="Calm, supportive drug and alcohol rehab setting in California — California Treatment Centers" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
+<section><div class="container"><div class="section-label">Guide</div><h1>Does Insurance Cover Rehab in California?</h1><p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--blue);padding-left:.8rem;margin:.2rem 0 1.5rem">Medically reviewed by <a href="/medical-director" style="color:var(--blue);font-weight:600">Bradley Tourtlotte, MD</a> &middot; Written by the <a href="/clinical-team" style="color:var(--blue);font-weight:600">California Treatment Centers clinical team</a> &middot; Last reviewed June 2026</p><img src="/images/california-rehab-near-you.svg" alt="Does Insurance Cover Rehab in California? | California Treatment Centers" title="Does Insurance Cover Rehab in California?" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/></div></section><section style="padding-top:0"><div class="container">
 <p>One of the first questions families ask is whether insurance will help pay for treatment. The good news is that many plans do cover addiction treatment. This guide explains how coverage generally works in California. It is general education, not financial or legal advice, and your specific benefits depend on your plan. The most reliable way to know what is covered is to verify your benefits directly.</p><h2>Parity Law and Behavioral Health</h2><p>Under the federal Mental Health Parity and Addiction Equity Act, many health plans must cover mental health and substance use treatment comparably to medical and surgical care. The Affordable Care Act also treats substance use disorder services as an essential health benefit for many plans. In practice, this means addiction treatment is often a covered benefit rather than an optional add-on.</p><h2>What Insurance May Cover</h2><p>Coverage varies by plan, but many insurers help pay for services across the continuum of care, including:</p><ul><li>Supervised <a href="/medical-detox">medical detox</a></li><li>Residential treatment</li><li><a href="/outpatient-treatment">Outpatient treatment</a>, including PHP and IOP</li><li>Medication-assisted treatment and dual diagnosis care</li></ul><p>Coverage usually depends on medical necessity, meaning the level of care is appropriate for your clinical situation as documented through an assessment.</p><h2>In-Network vs. Out-of-Network</h2><p>Whether a provider is in-network with your plan makes a big difference in cost. In-network care typically means lower out-of-pocket expenses because the provider has agreed to negotiated rates with your insurer. California Treatment Centers is in-network with most major insurers, which can make care more affordable for many families.</p><div class="card-grid-4"><div><h3>Parity Law</h3><p>Many plans must cover addiction care comparably to medical care.</p></div><div><h3>Medical Necessity</h3><p>Coverage often depends on the right level of care for your needs.</p></div><div><h3>In-Network</h3><p>In-network providers usually mean lower out-of-pocket costs.</p></div><div><h3>Verify Free</h3><p>A benefits check clarifies what your plan actually covers.</p></div></div><h2>Common Insurance Terms</h2><p>Understanding a few terms helps you read your plan:</p><ul><li><strong>Deductible:</strong> The amount you pay before insurance starts contributing.</li><li><strong>Copay and coinsurance:</strong> Your share of costs for covered services.</li><li><strong>Out-of-pocket maximum:</strong> The most you pay in a plan year before insurance covers the rest.</li><li><strong>Prior authorization:</strong> Approval some plans require before covering certain care.</li></ul><h2>Types of Plans</h2><p>Coverage details differ across employer plans, marketplace plans, and public programs like Medi-Cal, California's Medicaid program. Each has its own rules about networks, authorizations, and covered services. Because of this variation, two people with different plans may have very different costs for the same care.</p><h2>How to Verify Your Coverage</h2><p>Rather than guessing, the simplest path is a free insurance verification. With your plan information, our team can review your behavioral health benefits, explain what is likely covered, and outline any out-of-pocket responsibilities before you commit to anything. You can start by using our <a href="/verify-insurance">verify insurance</a> tool or calling us directly.</p><h2>We Can Help You Navigate It</h2><p>Insurance can feel confusing, especially during a stressful time. Terms overlap, plans differ, and the paperwork can be daunting when you are already worried about a loved one. You do not have to decode it alone. California Treatment Centers has multiple locations across California and works with most major insurers. Our team is glad to handle the legwork of checking your benefits so you can focus on getting help.</p><h2>A Few Things to Keep in Mind</h2><p>As you explore coverage, remember a few points that can save stress later:</p><ul><li>Coverage is tied to medical necessity, so a clinical assessment matters.</li><li>Some plans require prior authorization before certain levels of care.</li><li>In-network care almost always costs less than out-of-network.</li><li>Even with a high deductible, an out-of-pocket maximum caps your annual exposure.</li></ul><p>None of this is financial or legal advice, and your plan documents and insurer are the final word. A free verification simply helps translate those documents into a clearer picture before you decide.</p><p>If you are in crisis, call or text 988. For free, confidential treatment referrals any time, call SAMHSA at 1-800-662-4357.</p>
 </div></section>
 <section class="faq-bg" id="faq-section"><div class="container"><div class="section-label">Frequently Asked Questions</div><h2>Frequently Asked Questions</h2><div class="faq-list">

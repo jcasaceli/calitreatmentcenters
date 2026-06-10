@@ -134,10 +134,19 @@ function faqLd(faq){
 
 /* ---- Decorative imagery (generic gradient panels, honest alt) --- */
 /* Never claims to be a specific facility. img files generated below. */
+const CAT_IMG = {
+  level: 'images/california-drug-alcohol-rehab.svg',
+  treatment: 'images/california-drug-alcohol-rehab.svg',
+  insurance: 'images/california-rehab-insurance-coverage.svg',
+  location: 'images/california-rehab-near-you.svg',
+  article: 'images/california-rehab-near-you.svg'
+};
 function heroImg(meta){
-  const src = meta.hero || 'images/hero-recovery.svg';
-  const alt = meta.heroAlt || ('Calm, supportive drug and alcohol rehab setting in California — ' + BRAND);
-  return `<img src="/${src}" alt="${esc(alt)}" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:14px;margin:1.2rem 0 1.6rem"/>`;
+  const src = meta.hero || CAT_IMG[meta.category] || 'images/california-drug-alcohol-rehab.svg';
+  const kw = meta.h1 || meta.title || BRAND;
+  // keyword-rich alt text reflecting each page's target search intent
+  const alt = meta.heroAlt || (kw + ' | ' + BRAND);
+  return `<img src="/${src}" alt="${esc(alt)}" title="${esc(kw)}" width="1200" height="420" loading="eager" style="width:100%;height:auto;border-radius:16px;margin:1.2rem 0 1.6rem"/>`;
 }
 
 /* ---- Shared chrome ---------------------------------------------- */
