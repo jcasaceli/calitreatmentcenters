@@ -8,3 +8,71 @@
   to = "/"
   status = 301
   force = true
+
+# ── Legacy URLs from the prior site → closest current page ──
+# (fixes Google "Not found (404)" + recovers any link equity)
+[[redirects]]
+  from = "/verify-insurance-coverage"
+  to = "/verify-insurance"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/confidential-contact-form"
+  to = "/verify-insurance"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/contact"
+  to = "/verify-insurance"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/our-staff"
+  to = "/clinical-team"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/addiction-recovery-center-meet-our-professionals"
+  to = "/clinical-team"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/about-us"
+  to = "/clinical-team"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/our-facility"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/lander"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/addiction-recovery-center-links"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/drug-detox"
+  to = "/medical-detox"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/inpatient-treatment"
+  to = "/residential-treatment"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/addiction-recovery-center-in-sacramento-california"
+  to = "/rehab-sacramento"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/holistic-addiction-treatment-in-roseville-california"
+  to = "/rehab-roseville"
+  status = 301
+  force = true
