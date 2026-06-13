@@ -280,6 +280,7 @@ function renderPage(meta, innerHTML, extraSchema){
 <meta name="description" content="${esc(meta.desc)}"/>
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"/>
 <link rel="canonical" href="${url}"/>
+<link rel="icon" href="/favicon.ico" sizes="32x32"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
 <link rel="icon" type="image/png" sizes="256x256" href="/favicon-256.png"/>
@@ -336,7 +337,14 @@ write('index.html', renderPage({slug:'',title:HOME.title,desc:HOME.desc}, HOME.h
 EEAT.forEach(m=> write(m.slug+'.html', renderPage(m, m.html, m.id==='p-medical-director'?[REVIEWER_LD]:[])));
 
 /* Content pages */
-CONTENT.forEach(m=> write(m.slug+'.html', renderPage(m, contentInner(m), [faqLd(m.faq)])));
+CONTENT.forEach(m=> {
+  const crumb = '<script type="application/ld+json">\n' + JSON.stringify({
+    '@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[
+      {'@type':'ListItem',position:1,name:'Home',item:ORIGIN+'/'},
+      {'@type':'ListItem',position:2,name:stripTags(m.h1||m.title).split('|')[0].trim(),item:ORIGIN+'/'+m.slug}
+    ]}, null, 2) + '\n</script>';
+  write(m.slug+'.html', renderPage(m, contentInner(m), [faqLd(m.faq), crumb]));
+});
 
 /* Locations hub */
 if(CITIES.length){
