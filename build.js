@@ -60,12 +60,16 @@ const LOC_HUB = { id: 'p-locations', slug: 'california-rehab-locations', navLabe
 const GUIDE_HUB = { id: 'p-guides', slug: 'addiction-treatment-guides', navLabel: 'Guides',
   title: 'Addiction Treatment Guides & Resources | ' + BRAND,
   desc: 'Plain-language guides to detox, levels of care, insurance and choosing rehab in California. Free, confidential help. Call ' + PHONE + '.' };
+const SITEMAP_PAGE = { id: 'p-sitemap', slug: 'site-map',
+  title: 'Site Map — All Pages | ' + BRAND,
+  desc: 'Browse every page on californiatreatmentcenters.com — levels of care, treatments, insurance, California locations and guides.' };
 
 /* ---- Slug map --------------------------------------------------- */
 const slugMap = { 'p-home': '/' };
 [].concat(EEAT, CONTENT).forEach(p => { slugMap[p.id] = '/' + p.slug; });
 if (CITIES.length) slugMap[LOC_HUB.id] = '/' + LOC_HUB.slug;
 if (ARTICLES.length) slugMap[GUIDE_HUB.id] = '/' + GUIDE_HUB.slug;
+slugMap[SITEMAP_PAGE.id] = '/' + SITEMAP_PAGE.slug;
 
 /* ---- helpers ---------------------------------------------------- */
 function esc(s){ return String(s)
@@ -218,6 +222,7 @@ function buildFooter(){
       <h4 style="color:#fff;margin-bottom:.6rem">Company</h4>
       ${EEAT.map(p=>`<a href="/${p.slug}" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">${p.navLabel||p.title}</a>`).join('\n      ')}
       <a href="/${LOC_HUB.slug}" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">All Locations</a>
+      <a href="/${SITEMAP_PAGE.slug}" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">Site Map</a>
     </div>
   </div>
   <div style="text-align:center;color:rgba(255,255,255,.5);font-size:.82rem;padding:1.5rem 5% 0;border-top:1px solid rgba(255,255,255,.1);margin-top:1.5rem">
@@ -346,6 +351,22 @@ if(ARTICLES.length){
   write(GUIDE_HUB.slug+'.html', renderPage(GUIDE_HUB, inner));
 }
 
+/* HTML site map — internal-linking hub to aid crawl/discovery */
+{
+  const li = items => '<ul style="columns:2;-webkit-columns:2;list-style:none;padding:0;margin:.5rem 0 2.2rem">' +
+    items.map(p=>`<li style="padding:.32rem 0;break-inside:avoid"><a href="/${p.slug}" style="color:var(--blue);font-weight:500">${esc((p.navLabel||p.h1||p.title).replace(/<[^>]+>/g,'').split('|')[0].trim())}</a></li>`).join('') + '</ul>';
+  const inner = `<section><div class="container"><div class="section-label">Site Map</div><h1>Browse All Pages</h1>` +
+    `<p class="section-sub">Every page on ${BRAND.toLowerCase().replace(/ /g,'')}.com, in one place.</p>` +
+    (LEVELS.length?`<h2>Levels of Care</h2>${li(LEVELS)}`:'') +
+    (TREAT.length?`<h2>What We Treat</h2>${li(TREAT)}`:'') +
+    (INS.length?`<h2>Insurance</h2>${li(INS)}`:'') +
+    (CITIES.length?`<h2>California Locations</h2>${li(CITIES.concat([{slug:LOC_HUB.slug,navLabel:'All Locations'}]))}`:'') +
+    (ARTICLES.length?`<h2>Guides</h2>${li(ARTICLES.concat([{slug:GUIDE_HUB.slug,navLabel:'All Guides'}]))}`:'') +
+    `<h2>About</h2>${li(EEAT)}` +
+    `</div></section>`;
+  write(SITEMAP_PAGE.slug+'.html', renderPage(SITEMAP_PAGE, inner));
+}
+
 /* sitemap + robots */
 const today = process.env.BUILD_DATE || '2026-06-03';
 const urls=[{loc:ORIGIN+'/',pr:'1.0'}];
@@ -355,6 +376,7 @@ CITIES.forEach(p=>urls.push({loc:ORIGIN+'/'+p.slug,pr:'0.7'}));
 if(ARTICLES.length) urls.push({loc:ORIGIN+'/'+GUIDE_HUB.slug,pr:'0.7'});
 ARTICLES.forEach(p=>urls.push({loc:ORIGIN+'/'+p.slug,pr:'0.6'}));
 EEAT.forEach(p=>urls.push({loc:ORIGIN+'/'+p.slug,pr:'0.5'}));
+urls.push({loc:ORIGIN+'/'+SITEMAP_PAGE.slug,pr:'0.3'});
 fs.writeFileSync(path.join(OUT,'sitemap.xml'),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+
   urls.map(u=>`  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${u.pr}</priority>\n  </url>`).join('\n')+
