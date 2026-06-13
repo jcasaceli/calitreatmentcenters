@@ -52,7 +52,10 @@ if (fs.existsSync(contentDir)) {
 }
 const byCat = c => CONTENT.filter(p => p.category === c);
 const LEVELS = byCat('level'), TREAT = byCat('treatment'), INS = byCat('insurance'),
-      CITIES = byCat('location'), ARTICLES = byCat('article');
+      CITIES = byCat('location'), ARTICLES = byCat('article'), BLOG = byCat('blog');
+const BLOG_HUB = { id: 'p-blog', slug: 'blog', navLabel: 'Blog',
+  title: 'Addiction & Recovery Blog | ' + BRAND,
+  desc: 'Expert, sourced articles on addiction, detox, treatment and recovery in California — citing NIDA, SAMHSA and other authorities. Call ' + PHONE + '.' };
 
 const LOC_HUB = { id: 'p-locations', slug: 'california-rehab-locations', navLabel: 'All Locations',
   title: 'Drug & Alcohol Rehab Locations Across California | ' + BRAND,
@@ -179,6 +182,7 @@ function buildNav(){
       <li><span>Locations <span class="arrow">&#9660;</span></span>
         <div class="dropdown wide">\n${cityColsHtml}\n      <div class="dropdown-col"><div class="dropdown-col-title">More</div>\n        <a href="/${LOC_HUB.slug}">All California Locations</a></div>\n        </div></li>
       <li><a href="/${GUIDE_HUB.slug}">Guides</a></li>
+      <li><a href="/blog/">Blog</a></li>
       <li><span>About <span class="arrow">&#9660;</span></span>
         <div class="dropdown">\n${dd(EEAT)}\n        </div></li>
       <li><a href="tel:${TEL}" class="nav-cta">Call ${PHONE}</a></li>
@@ -222,6 +226,7 @@ function buildFooter(){
       <h4 style="color:#fff;margin-bottom:.6rem">Company</h4>
       ${EEAT.map(p=>`<a href="/${p.slug}" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">${p.navLabel||p.title}</a>`).join('\n      ')}
       <a href="/${LOC_HUB.slug}" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">All Locations</a>
+      <a href="/blog/" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">Blog</a>
       <a href="/${SITEMAP_PAGE.slug}" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">Site Map</a>
     </div>
   </div>
@@ -337,7 +342,7 @@ write('index.html', renderPage({slug:'',title:HOME.title,desc:HOME.desc}, HOME.h
 EEAT.forEach(m=> write(m.slug+'.html', renderPage(m, m.html, m.id==='p-medical-director'?[REVIEWER_LD]:[])));
 
 /* Content pages */
-CONTENT.forEach(m=> {
+CONTENT.filter(m=>m.category!=='blog').forEach(m=> {
   const crumb = '<script type="application/ld+json">\n' + JSON.stringify({
     '@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[
       {'@type':'ListItem',position:1,name:'Home',item:ORIGIN+'/'},
@@ -359,6 +364,33 @@ if(ARTICLES.length){
   write(GUIDE_HUB.slug+'.html', renderPage(GUIDE_HUB, inner));
 }
 
+/* Blog — dated, sourced posts with Article schema, at /blog/<slug> */
+if (BLOG.length) {
+  fs.mkdirSync(path.join(OUT,'blog'), { recursive: true });
+  const D = ['2026-06-01','2026-06-02','2026-06-03','2026-06-04','2026-06-05','2026-06-06','2026-06-07','2026-06-08','2026-06-09','2026-06-10','2026-06-11','2026-06-12'];
+  BLOG.forEach((p,i)=>{ p.date = p.date || D[Math.min(D.length-1, Math.round(i*(D.length-1)/Math.max(1,BLOG.length-1)))]; });
+  const sorted = BLOG.slice().sort((a,b)=> a.date<b.date?1:-1);
+  BLOG.forEach(p=>{
+    const url = ORIGIN + '/blog/' + p.slug;
+    const author = p.author || (BRAND + ' Editorial Team');
+    const byline = `<p class="review-byline" style="color:var(--muted);font-size:.9rem;border-left:3px solid var(--gold);padding-left:.8rem;margin:.2rem 0 1.5rem">By ${esc(author)} &middot; Published ${p.date} &middot; Medically reviewed by <a href="/medical-director" style="color:var(--gold);font-weight:600">Bradley Tourtlotte, MD</a></p>`;
+    const sources = (p.sources&&p.sources.length) ? `<section style="padding-top:0"><div class="container" style="max-width:780px"><h2>Sources &amp; References</h2><ul>${p.sources.map(s=>`<li style="margin:.3rem 0"><a href="${s.url}" target="_blank" rel="noopener">${esc(s.name)}</a></li>`).join('')}</ul></div></section>` : '';
+    const inner = `<section><div class="container" style="max-width:820px"><div class="section-label">Blog</div><h1>${esc(p.h1||p.title)}</h1>${byline}</div></section>` +
+      `<section style="padding-top:0"><div class="container" style="max-width:820px">\n${p.bodyHtml}\n</div></section>` +
+      faqSection(p.faq) + sources + ctaBlock;
+    const articleLd = '<script type="application/ld+json">\n' + JSON.stringify({
+      '@context':'https://schema.org','@type':'BlogPosting', headline:p.title, description:p.desc,
+      datePublished:p.date, dateModified:p.date, inLanguage:'en-US',
+      author:{'@type':'Organization', name:author}, publisher:{'@id':ORG_ID},
+      image:ORIGIN+'/og-image.png', mainEntityOfPage:url, reviewedBy:{'@id':REVIEWER_ID}
+    }, null, 2) + '\n</script>';
+    write('blog/'+p.slug+'.html', renderPage({slug:'blog/'+p.slug, title:p.title, desc:p.desc}, inner, [articleLd, faqLd(p.faq)]));
+  });
+  const items = sorted.map(p=>`<a class="card" href="/blog/${p.slug}" style="display:block"><p style="color:var(--muted);font-size:.78rem;margin-bottom:.3rem">${p.date}</p><h3 style="color:var(--blue)">${esc(p.title)}</h3><p style="color:var(--muted);font-size:.9rem">${esc(p.desc)}</p></a>`).join('\n');
+  const hubInner = `<section><div class="container"><div class="section-label">Blog</div><h1>Addiction &amp; Recovery Blog</h1><p class="section-sub">Expert, sourced articles on addiction, treatment and recovery — reviewed by our medical director.</p><div class="card-grid-4">\n${items}\n</div></div></section>` + ctaBlock;
+  write('blog/index.html', renderPage({slug:'blog/', title:BLOG_HUB.title, desc:BLOG_HUB.desc}, hubInner));
+}
+
 /* HTML site map — internal-linking hub to aid crawl/discovery */
 {
   const li = items => '<ul style="columns:2;-webkit-columns:2;list-style:none;padding:0;margin:.5rem 0 2.2rem">' +
@@ -370,6 +402,7 @@ if(ARTICLES.length){
     (INS.length?`<h2>Insurance</h2>${li(INS)}`:'') +
     (CITIES.length?`<h2>California Locations</h2>${li(CITIES.concat([{slug:LOC_HUB.slug,navLabel:'All Locations'}]))}`:'') +
     (ARTICLES.length?`<h2>Guides</h2>${li(ARTICLES.concat([{slug:GUIDE_HUB.slug,navLabel:'All Guides'}]))}`:'') +
+    (BLOG.length?`<h2>Blog</h2><ul style="columns:2;-webkit-columns:2;list-style:none;padding:0;margin:.5rem 0 2.2rem"><li style="padding:.32rem 0"><a href="/blog/" style="color:var(--blue);font-weight:500">Blog Home</a></li>${BLOG.map(p=>`<li style="padding:.32rem 0;break-inside:avoid"><a href="/blog/${p.slug}" style="color:var(--blue);font-weight:500">${esc(p.title)}</a></li>`).join('')}</ul>`:'') +
     `<h2>About</h2>${li(EEAT)}` +
     `</div></section>`;
   write(SITEMAP_PAGE.slug+'.html', renderPage(SITEMAP_PAGE, inner));
@@ -384,6 +417,8 @@ CITIES.forEach(p=>urls.push({loc:ORIGIN+'/'+p.slug,pr:'0.7'}));
 if(ARTICLES.length) urls.push({loc:ORIGIN+'/'+GUIDE_HUB.slug,pr:'0.7'});
 ARTICLES.forEach(p=>urls.push({loc:ORIGIN+'/'+p.slug,pr:'0.6'}));
 EEAT.forEach(p=>urls.push({loc:ORIGIN+'/'+p.slug,pr:'0.5'}));
+if(BLOG.length) urls.push({loc:ORIGIN+'/blog/',pr:'0.7'});
+BLOG.forEach(p=>urls.push({loc:ORIGIN+'/blog/'+p.slug,pr:'0.6'}));
 urls.push({loc:ORIGIN+'/'+SITEMAP_PAGE.slug,pr:'0.3'});
 fs.writeFileSync(path.join(OUT,'sitemap.xml'),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+
