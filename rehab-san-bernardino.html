@@ -869,7 +869,17 @@ document.addEventListener('DOMContentLoaded',function(){
   if(hb&&mm){hb.addEventListener('click',function(){var o=mm.classList.toggle('open');hb.classList.toggle('open',o);hb.setAttribute('aria-expanded',String(o));document.body.style.overflow=o?'hidden':'';});}
   window.addEventListener('resize',function(){if(window.innerWidth>768)closeMob();});
   document.addEventListener('click',function(e){var q=e.target.closest('.faq-q');if(!q)return;var it=q.parentElement,open=it.classList.contains('open');var pg=it.closest('.faq-list')||document;var os=pg.querySelectorAll('.faq-item.open');for(var i=0;i<os.length;i++)os[i].classList.remove('open');if(!open)it.classList.add('open');});
-  document.addEventListener('submit',function(e){if(e.target.tagName==='FORM'){e.preventDefault();var b=e.target.querySelector('.submit-btn');if(b){b.textContent='Submitted! We will call you shortly.';b.style.background='var(--green)';b.disabled=true;}}});
+  document.addEventListener('submit',function(e){
+    if(e.target.tagName!=='FORM')return;
+    e.preventDefault();
+    var form=e.target, b=form.querySelector('.submit-btn');
+    try{
+      var body=new URLSearchParams(new FormData(form));
+      if(!body.has('form-name'))body.append('form-name', form.getAttribute('name')||'benefits-verification');
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()}).catch(function(){});
+    }catch(err){}
+    if(b){b.textContent='Submitted! We will call you shortly.';b.style.background='var(--green)';b.disabled=true;}
+  });
 });
 </script>
 <!-- Tawk.to live chat -->

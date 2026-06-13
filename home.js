@@ -102,11 +102,13 @@ module.exports = {
     <p class="lux-eyebrow">Free &amp; Confidential</p>
     <h2>Verify Your Benefits</h2>
     <p class="section-sub">Tell us a little and we'll confirm your coverage — usually within a few hours. HIPAA &amp; 42 CFR Part 2 protected; never sold or shared.</p>
-    <form onsubmit="return false">
-      <div class="form-group"><label>Your Name</label><input type="text" required/></div>
-      <div class="form-group"><label>Phone</label><input type="tel" required/></div>
+    <form name="benefits-verification" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="benefits-verification"/>
+      <p hidden><label>Leave this blank: <input name="bot-field"/></label></p>
+      <div class="form-group"><label>Your Name</label><input type="text" name="name" required/></div>
+      <div class="form-group"><label>Phone</label><input type="tel" name="phone" required/></div>
       <div class="form-group"><label>Insurance Provider</label>
-        <select><option value="">— Select —</option><option>Cigna</option><option>Aetna</option><option>Blue Cross Blue Shield</option><option>Magellan</option><option>Kaiser Permanente</option><option>Anthem</option><option>Health Net</option><option>UnitedHealthcare</option><option>Humana</option><option>Other / Not sure</option></select>
+        <select name="insurance"><option value="">— Select —</option><option>Cigna</option><option>Aetna</option><option>Blue Cross Blue Shield</option><option>Magellan</option><option>Kaiser Permanente</option><option>Anthem</option><option>Health Net</option><option>UnitedHealthcare</option><option>Humana</option><option>Other / Not sure</option></select>
       </div>
       <button type="submit" class="submit-btn">Verify My Benefits</button>
       <p class="form-disclaimer" style="margin-top:1rem;color:var(--muted);font-size:.85rem">🔒 Or call <a href="tel:${TEL}" style="color:var(--gold);font-weight:700">${PHONE}</a> — available 24/7.</p>

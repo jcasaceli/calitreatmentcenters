@@ -847,11 +847,13 @@ footer { border-top: 3px solid var(--gold); }
     <p class="lux-eyebrow">Free &amp; Confidential</p>
     <h2>Verify Your Benefits</h2>
     <p class="section-sub">Tell us a little and we'll confirm your coverage — usually within a few hours. HIPAA &amp; 42 CFR Part 2 protected; never sold or shared.</p>
-    <form onsubmit="return false">
-      <div class="form-group"><label>Your Name</label><input type="text" required/></div>
-      <div class="form-group"><label>Phone</label><input type="tel" required/></div>
+    <form name="benefits-verification" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="benefits-verification"/>
+      <p hidden><label>Leave this blank: <input name="bot-field"/></label></p>
+      <div class="form-group"><label>Your Name</label><input type="text" name="name" required/></div>
+      <div class="form-group"><label>Phone</label><input type="tel" name="phone" required/></div>
       <div class="form-group"><label>Insurance Provider</label>
-        <select><option value="">— Select —</option><option>Cigna</option><option>Aetna</option><option>Blue Cross Blue Shield</option><option>Magellan</option><option>Kaiser Permanente</option><option>Anthem</option><option>Health Net</option><option>UnitedHealthcare</option><option>Humana</option><option>Other / Not sure</option></select>
+        <select name="insurance"><option value="">— Select —</option><option>Cigna</option><option>Aetna</option><option>Blue Cross Blue Shield</option><option>Magellan</option><option>Kaiser Permanente</option><option>Anthem</option><option>Health Net</option><option>UnitedHealthcare</option><option>Humana</option><option>Other / Not sure</option></select>
       </div>
       <button type="submit" class="submit-btn">Verify My Benefits</button>
       <p class="form-disclaimer" style="margin-top:1rem;color:var(--muted);font-size:.85rem">🔒 Or call <a href="tel:2133216518" style="color:var(--gold);font-weight:700">213-321-6518</a> — available 24/7.</p>
@@ -916,7 +918,17 @@ document.addEventListener('DOMContentLoaded',function(){
   if(hb&&mm){hb.addEventListener('click',function(){var o=mm.classList.toggle('open');hb.classList.toggle('open',o);hb.setAttribute('aria-expanded',String(o));document.body.style.overflow=o?'hidden':'';});}
   window.addEventListener('resize',function(){if(window.innerWidth>768)closeMob();});
   document.addEventListener('click',function(e){var q=e.target.closest('.faq-q');if(!q)return;var it=q.parentElement,open=it.classList.contains('open');var pg=it.closest('.faq-list')||document;var os=pg.querySelectorAll('.faq-item.open');for(var i=0;i<os.length;i++)os[i].classList.remove('open');if(!open)it.classList.add('open');});
-  document.addEventListener('submit',function(e){if(e.target.tagName==='FORM'){e.preventDefault();var b=e.target.querySelector('.submit-btn');if(b){b.textContent='Submitted! We will call you shortly.';b.style.background='var(--green)';b.disabled=true;}}});
+  document.addEventListener('submit',function(e){
+    if(e.target.tagName!=='FORM')return;
+    e.preventDefault();
+    var form=e.target, b=form.querySelector('.submit-btn');
+    try{
+      var body=new URLSearchParams(new FormData(form));
+      if(!body.has('form-name'))body.append('form-name', form.getAttribute('name')||'benefits-verification');
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()}).catch(function(){});
+    }catch(err){}
+    if(b){b.textContent='Submitted! We will call you shortly.';b.style.background='var(--green)';b.disabled=true;}
+  });
 });
 </script>
 <!-- Tawk.to live chat -->
