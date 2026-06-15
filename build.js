@@ -219,15 +219,37 @@ function buildFooter(){
       ${LEVELS.map(p=>`<a href="/${p.slug}" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">${p.navLabel||p.title}</a>`).join('\n      ')}
     </div>
     <div>
+      <h4 style="color:#fff;margin-bottom:.6rem">What We Treat</h4>
+      ${TREAT.map(p=>`<a href="/${p.slug}" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">${p.navLabel||p.title}</a>`).join('\n      ')}
+    </div>
+    <div>
       <h4 style="color:#fff;margin-bottom:.6rem">Insurance</h4>
       ${INS.map(p=>`<a href="/${p.slug}" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">${p.navLabel||p.title}</a>`).join('\n      ')}
     </div>
+  </div>
+  <div style="padding:1.6rem 5% 0;border-top:1px solid rgba(255,255,255,.1);margin-top:1.6rem">
+    <h4 style="color:#fff;margin-bottom:.7rem">Areas We Serve Across California</h4>
+    <div style="columns:5;-webkit-columns:5;column-gap:1.2rem">
+      ${CITIES.map(p=>`<a href="/${p.slug}" style="display:block;color:rgba(255,255,255,.6);padding:.16rem 0;font-size:.82rem;break-inside:avoid">${p.navLabel||p.title}</a>`).join('\n      ')}
+      <a href="/${LOC_HUB.slug}" style="display:block;color:var(--gold-light);padding:.16rem 0;font-size:.82rem;font-weight:700;break-inside:avoid">All Locations &rarr;</a>
+    </div>
+  </div>
+  <div class="footer-grid" style="padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.1);margin-top:1.6rem">
+    <div>
+      <h4 style="color:#fff;margin-bottom:.6rem">Guides</h4>
+      ${ARTICLES.map(p=>`<a href="/${p.slug}" style="display:block;color:rgba(255,255,255,.7);padding:.18rem 0;font-size:.85rem">${p.navLabel||p.title}</a>`).join('\n      ')}
+      <a href="/${GUIDE_HUB.slug}" style="display:block;color:var(--gold-light);padding:.18rem 0;font-size:.85rem;font-weight:700">All Guides &rarr;</a>
+    </div>
+    <div>
+      <h4 style="color:#fff;margin-bottom:.6rem">From the Blog</h4>
+      ${BLOG.slice(0,8).map(p=>`<a href="/blog/${p.slug}" style="display:block;color:rgba(255,255,255,.7);padding:.18rem 0;font-size:.85rem">${esc((p.title||'').slice(0,42))}</a>`).join('\n      ')}
+      <a href="/blog/" style="display:block;color:var(--gold-light);padding:.18rem 0;font-size:.85rem;font-weight:700">All Posts &rarr;</a>
+    </div>
     <div>
       <h4 style="color:#fff;margin-bottom:.6rem">Company</h4>
-      ${EEAT.map(p=>`<a href="/${p.slug}" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">${p.navLabel||p.title}</a>`).join('\n      ')}
-      <a href="/${LOC_HUB.slug}" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">All Locations</a>
-      <a href="/blog/" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">Blog</a>
-      <a href="/${SITEMAP_PAGE.slug}" style="display:block;color:rgba(255,255,255,.75);padding:.2rem 0;font-size:.9rem">Site Map</a>
+      ${EEAT.map(p=>`<a href="/${p.slug}" style="display:block;color:rgba(255,255,255,.7);padding:.18rem 0;font-size:.85rem">${p.navLabel||p.title}</a>`).join('\n      ')}
+      <a href="/verify-insurance" style="display:block;color:rgba(255,255,255,.7);padding:.18rem 0;font-size:.85rem">Verify Insurance</a>
+      <a href="/${SITEMAP_PAGE.slug}" style="display:block;color:rgba(255,255,255,.7);padding:.18rem 0;font-size:.85rem">Site Map</a>
     </div>
   </div>
   <div style="text-align:center;color:rgba(255,255,255,.5);font-size:.82rem;padding:1.5rem 5% 0;border-top:1px solid rgba(255,255,255,.1);margin-top:1.5rem">
