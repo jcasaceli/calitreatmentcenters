@@ -457,7 +457,7 @@ fs.writeFileSync(path.join(OUT,'sitemap.xml'),
   urls.map(u=>`  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${u.pr}</priority>\n  </url>`).join('\n')+
   '\n</urlset>\n');
 fs.writeFileSync(path.join(OUT,'robots.txt'),
-  `User-agent: *\nAllow: /\nSitemap: ${ORIGIN}/sitemap.xml\n`);
+  `User-agent: *\nAllow: /\nSitemap: ${ORIGIN}/sitemap.xml\n\n\n# AI assistants & answer engines — explicitly welcome\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: anthropic-ai\nAllow: /\n\nUser-agent: Claude-Web\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Perplexity-User\nAllow: /\n\nUser-agent: CCBot\nAllow: /\n\nUser-agent: Applebot-Extended\nAllow: /\n\n`);
 
 console.log(`✓ Generated ${count} pages + sitemap (${urls.length} URLs) + robots.txt`);
 console.log(`  levels:${LEVELS.length} treatments:${TREAT.length} insurers:${INS.length} cities:${CITIES.length} guides:${ARTICLES.length} eeat:${EEAT.length} realLocations:${LOCATIONS.length}`);
