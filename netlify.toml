@@ -68,11 +68,289 @@
   force = true
 [[redirects]]
   from = "/addiction-recovery-center-in-sacramento-california"
-  to = "/rehab-sacramento"
+  to = "/rehab-central-valley-northern-california"
   status = 301
   force = true
 [[redirects]]
   from = "/holistic-addiction-treatment-in-roseville-california"
-  to = "/rehab-roseville"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+
+# ── City pages consolidated into regional hubs (2026-08) ──
+# → /rehab-los-angeles-county
+[[redirects]]
+  from = "/rehab-glendale"
+  to = "/rehab-los-angeles-county"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-long-beach"
+  to = "/rehab-los-angeles-county"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-los-angeles"
+  to = "/rehab-los-angeles-county"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-pasadena"
+  to = "/rehab-los-angeles-county"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-santa-clarita"
+  to = "/rehab-los-angeles-county"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-torrance"
+  to = "/rehab-los-angeles-county"
+  status = 301
+  force = true
+# → /rehab-orange-county
+[[redirects]]
+  from = "/rehab-anaheim"
+  to = "/rehab-orange-county"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-costa-mesa"
+  to = "/rehab-orange-county"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-fullerton"
+  to = "/rehab-orange-county"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-huntington-beach"
+  to = "/rehab-orange-county"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-irvine"
+  to = "/rehab-orange-county"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-orange"
+  to = "/rehab-orange-county"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-santa-ana"
+  to = "/rehab-orange-county"
+  status = 301
+  force = true
+# → /rehab-san-diego-inland-empire
+[[redirects]]
+  from = "/rehab-carlsbad"
+  to = "/rehab-san-diego-inland-empire"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-chula-vista"
+  to = "/rehab-san-diego-inland-empire"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-escondido"
+  to = "/rehab-san-diego-inland-empire"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-murrieta"
+  to = "/rehab-san-diego-inland-empire"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-oceanside"
+  to = "/rehab-san-diego-inland-empire"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-palm-springs"
+  to = "/rehab-san-diego-inland-empire"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-riverside"
+  to = "/rehab-san-diego-inland-empire"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-san-bernardino"
+  to = "/rehab-san-diego-inland-empire"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-san-diego"
+  to = "/rehab-san-diego-inland-empire"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-temecula"
+  to = "/rehab-san-diego-inland-empire"
+  status = 301
+  force = true
+# → /rehab-ventura-central-coast
+[[redirects]]
+  from = "/rehab-salinas"
+  to = "/rehab-ventura-central-coast"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-san-luis-obispo"
+  to = "/rehab-ventura-central-coast"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-santa-barbara"
+  to = "/rehab-ventura-central-coast"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-simi-valley"
+  to = "/rehab-ventura-central-coast"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-thousand-oaks"
+  to = "/rehab-ventura-central-coast"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-ventura"
+  to = "/rehab-ventura-central-coast"
+  status = 301
+  force = true
+# → /rehab-bay-area
+[[redirects]]
+  from = "/rehab-berkeley"
+  to = "/rehab-bay-area"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-concord"
+  to = "/rehab-bay-area"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-fremont"
+  to = "/rehab-bay-area"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-hayward"
+  to = "/rehab-bay-area"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-oakland"
+  to = "/rehab-bay-area"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-san-francisco"
+  to = "/rehab-bay-area"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-san-jose"
+  to = "/rehab-bay-area"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-santa-clara"
+  to = "/rehab-bay-area"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-santa-rosa"
+  to = "/rehab-bay-area"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-sunnyvale"
+  to = "/rehab-bay-area"
+  status = 301
+  force = true
+# → /rehab-central-valley-northern-california
+[[redirects]]
+  from = "/rehab-bakersfield"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-chico"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-clovis"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-davis"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-elk-grove"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-folsom"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-fresno"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-merced"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-modesto"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-redding"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-roseville"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-sacramento"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-stockton"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-vacaville"
+  to = "/rehab-central-valley-northern-california"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rehab-visalia"
+  to = "/rehab-central-valley-northern-california"
   status = 301
   force = true

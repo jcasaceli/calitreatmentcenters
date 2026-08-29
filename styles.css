@@ -448,3 +448,13 @@ footer { border-top: 3px solid var(--gold); }
 .lux-features h3 { color: #fff; margin-bottom: .4rem; font-size: 1.15rem; }
 .lux-features p { color: rgba(255,255,255,.72); font-size: .94rem; }
 @media (max-width: 820px){ .lux-features { grid-template-columns: 1fr 1fr; gap: 1.8rem; } }
+
+/* ── Content comparison tables (levels of care, coverage) ───────────── */
+.table-wrap { overflow-x: auto; margin: 1.8rem 0; -webkit-overflow-scrolling: touch; }
+.table-wrap table { border-collapse: collapse; width: 100%; min-width: 480px; font-size: .95rem; }
+.table-wrap th, .table-wrap td { padding: .78rem 1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+.table-wrap thead th { background: var(--gray); color: var(--navy); font-family: Georgia, serif; font-weight: 600; font-size: .88rem; letter-spacing: .01em; border-bottom: 2px solid var(--gold); white-space: nowrap; }
+.table-wrap tbody tr:last-child td { border-bottom: none; }
+.table-wrap tbody td:first-child { color: var(--navy); white-space: nowrap; }
+.table-wrap td strong { color: var(--navy); font-weight: 600; }
+@media (max-width: 700px){ .table-wrap th, .table-wrap td { padding: .62rem .7rem; font-size: .9rem; } }

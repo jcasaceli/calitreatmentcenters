@@ -52,7 +52,8 @@ if (fs.existsSync(contentDir)) {
 }
 const byCat = c => CONTENT.filter(p => p.category === c);
 const LEVELS = byCat('level'), TREAT = byCat('treatment'), INS = byCat('insurance'),
-      CITIES = byCat('location'), ARTICLES = byCat('article'), BLOG = byCat('blog');
+      CITIES = byCat('location'), ARTICLES = byCat('article'), BLOG = byCat('blog'),
+      SERVICE_AREAS = byCat('service-area');
 const BLOG_HUB = { id: 'p-blog', slug: 'blog', navLabel: 'Blog',
   title: 'Addiction & Recovery Blog | ' + BRAND,
   desc: 'Expert, sourced articles on addiction, detox, treatment and recovery in California — citing NIDA, SAMHSA and other authorities. Call ' + PHONE + '.' };
@@ -433,6 +434,7 @@ if (BLOG.length) {
     (TREAT.length?`<h2>What We Treat</h2>${li(TREAT)}`:'') +
     (INS.length?`<h2>Insurance</h2>${li(INS)}`:'') +
     (CITIES.length?`<h2>California Locations</h2>${li(CITIES.concat([{slug:LOC_HUB.slug,navLabel:'All Locations'}]))}`:'') +
+    (SERVICE_AREAS.length?`<h2>Service Areas</h2>${li(SERVICE_AREAS)}`:'') +
     (ARTICLES.length?`<h2>Guides</h2>${li(ARTICLES.concat([{slug:GUIDE_HUB.slug,navLabel:'All Guides'}]))}`:'') +
     (BLOG.length?`<h2>Blog</h2><ul style="columns:2;-webkit-columns:2;list-style:none;padding:0;margin:.5rem 0 2.2rem"><li style="padding:.32rem 0"><a href="/blog/" style="color:var(--blue);font-weight:500">Blog Home</a></li>${BLOG.map(p=>`<li style="padding:.32rem 0;break-inside:avoid"><a href="/blog/${p.slug}" style="color:var(--blue);font-weight:500">${esc(p.title)}</a></li>`).join('')}</ul>`:'') +
     `<h2>About</h2>${li(EEAT)}` +
@@ -446,6 +448,7 @@ const urls=[{loc:ORIGIN+'/',pr:'1.0'}];
 LEVELS.concat(TREAT,INS).forEach(p=>urls.push({loc:ORIGIN+'/'+p.slug,pr:'0.8'}));
 if(CITIES.length) urls.push({loc:ORIGIN+'/'+LOC_HUB.slug,pr:'0.7'});
 CITIES.forEach(p=>urls.push({loc:ORIGIN+'/'+p.slug,pr:'0.7'}));
+SERVICE_AREAS.forEach(p=>urls.push({loc:ORIGIN+'/'+p.slug,pr:'0.7'}));
 if(ARTICLES.length) urls.push({loc:ORIGIN+'/'+GUIDE_HUB.slug,pr:'0.7'});
 ARTICLES.forEach(p=>urls.push({loc:ORIGIN+'/'+p.slug,pr:'0.6'}));
 EEAT.forEach(p=>urls.push({loc:ORIGIN+'/'+p.slug,pr:'0.5'}));
