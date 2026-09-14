@@ -14,7 +14,7 @@ const cta = `
 module.exports = [
   {
     id: 'p-medical-director', slug: 'medical-director', navLabel: 'Medical Director',
-    title: 'Medical Director — Bradley Tourtlotte, MD | ' + BRAND,
+    title: 'Medical Director — Bradley Tourtlotte, MD',
     desc: 'Meet our Medical Director, Bradley Tourtlotte, MD — a physician with 35+ years of experience providing medical oversight of detox and addiction treatment.',
     html: `
 <section><div class="container">
@@ -32,8 +32,8 @@ module.exports = [
   },
   {
     id: 'p-clinical-team', slug: 'clinical-team', navLabel: 'Our Team',
-    title: 'Our Clinical & Leadership Team | ' + BRAND,
-    desc: 'Meet the leadership and clinical team behind ' + BRAND + ' — experienced behavioral-health professionals committed to evidence-based, compassionate care.',
+    title: 'Our Clinical & Leadership Team | California Rehab',
+    desc: 'Meet the leadership and clinical team behind ' + BRAND + ' — behavioral-health professionals committed to evidence-based care.',
     html: `
 <section><div class="container">
   <div class="section-label">Our People</div>
@@ -48,7 +48,7 @@ module.exports = [
   },
   {
     id: 'p-editorial', slug: 'editorial-policy', navLabel: 'Editorial &amp; Review Policy',
-    title: 'Editorial & Medical Review Policy | ' + BRAND,
+    title: 'Editorial & Medical Review Policy',
     desc: 'How ' + BRAND + ' researches, writes, sources and reviews its addiction-treatment content for accuracy. Our standards and update process.',
     html: `
 <section><div class="container">
@@ -72,7 +72,7 @@ module.exports = [
   },
   {
     id: 'p-references', slug: 'references', navLabel: 'References &amp; Sources',
-    title: 'References & Sources | ' + BRAND,
+    title: 'References & Sources — Addiction Treatment Content',
     desc: 'Authoritative sources behind our addiction-treatment content — SAMHSA, NIDA, NIAAA, ASAM, and California health agencies.',
     html: `
 <section><div class="container">

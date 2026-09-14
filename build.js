@@ -55,17 +55,17 @@ const LEVELS = byCat('level'), TREAT = byCat('treatment'), INS = byCat('insuranc
       CITIES = byCat('location'), ARTICLES = byCat('article'), BLOG = byCat('blog'),
       SERVICE_AREAS = byCat('service-area');
 const BLOG_HUB = { id: 'p-blog', slug: 'blog', navLabel: 'Blog',
-  title: 'Addiction & Recovery Blog | ' + BRAND,
+  title: 'Addiction & Recovery Blog — California Treatment',
   desc: 'Expert, sourced articles on addiction, detox, treatment and recovery in California — citing NIDA, SAMHSA and other authorities. Call ' + PHONE + '.' };
 
 const LOC_HUB = { id: 'p-locations', slug: 'california-rehab-locations', navLabel: 'All Locations',
-  title: 'Drug & Alcohol Rehab Locations Across California | ' + BRAND,
-  desc: 'Find ' + BRAND + ' addiction treatment serving cities across California — detox, residential, outpatient and sober living. In-network with most insurers. Call ' + PHONE + '.' };
+  title: 'Rehab Locations Across California — By Region',
+  desc: 'Addiction treatment across California by region — detox, residential, PHP, IOP and sober living, with free insurance verification. Call ' + PHONE + '.' };
 const GUIDE_HUB = { id: 'p-guides', slug: 'addiction-treatment-guides', navLabel: 'Guides',
-  title: 'Addiction Treatment Guides & Resources | ' + BRAND,
+  title: 'Addiction Treatment Guides & Resources | California',
   desc: 'Plain-language guides to detox, levels of care, insurance and choosing rehab in California. Free, confidential help. Call ' + PHONE + '.' };
 const SITEMAP_PAGE = { id: 'p-sitemap', slug: 'site-map',
-  title: 'Site Map — All Pages | ' + BRAND,
+  title: 'Site Map — All Pages',
   desc: 'Browse every page on californiatreatmentcenters.com — levels of care, treatments, insurance, California locations and guides.' };
 
 /* ---- Slug map --------------------------------------------------- */

@@ -2,8 +2,8 @@
 const PHONE = '213-321-6518', TEL = '2133216518';
 
 module.exports = {
-  title: 'Luxury Drug & Alcohol Rehab in California | Detox, Residential & Outpatient | California Treatment Centers',
-  desc: 'Discreet, physician-led drug & alcohol treatment across California — detox, residential, outpatient, sober living. In-network with most major insurers. Call ' + PHONE + '.',
+  title: 'Drug & Alcohol Rehab in California | Detox to Outpatient',
+  desc: 'Drug and alcohol rehab in California: medical detox, residential, PHP, IOP and MAT. Free insurance verification and placement help. Call ' + PHONE + '.',
   faq: [
     { q: 'Do you take insurance for rehab?', a: 'Yes. We are in-network with most major insurers, including Cigna, Aetna, Blue Cross Blue Shield, Magellan, Kaiser and more. We verify your specific benefits for free before you start.' },
     { q: 'What levels of care do you offer?', a: 'The full continuum: medical detox, residential (inpatient) treatment, partial hospitalization (PHP), intensive outpatient (IOP), standard outpatient, sober living, and sober companionship.' },
